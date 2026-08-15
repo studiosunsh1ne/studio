@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Apps — Studio Sunshine ☀️</title>
+  <meta name="description" content="Explore the apps, experiments and digital products created by Studio Sunshine.">
+
+  <style>
+    :root {
+      --yellow: #FFD84D;
+      --yellow-soft: #FFF4BE;
+      --ink: #161616;
+      --muted: #747474;
+      --paper: #FFFEF9;
+      --white: #FFFFFF;
+      --line: #E9E6DC;
+      --soft: #F6F4ED;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav,
+    main,
+    footer {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      padding: 26px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--ink);
+    }
+
+    .build-link {
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 8px 13px;
+      border-radius: 50px;
+    }
+
+    /* MAIN */
+
+    main {
+      padding: 70px 24px 100px;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 850px;
+      padding: 55px 0 85px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .sun {
+      width: 10px;
+      height: 10px;
+      background: var(--yellow);
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: .84;
+      letter-spacing: -.08em;
+      margin-bottom: 35px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* FILTERS */
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 35px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .filter {
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--muted);
+      padding: 9px 14px;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: .75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .filter:hover,
+    .filter.active {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+    }
+
+    /* APP GRID */
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .app-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 30px;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.06);
+    }
+
+    .app-card.featured {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+    }
+
+    .app-card.featured .app-description {
+      color: #bcbcbc;
+    }
+
+    .app-card.featured .app-meta {
+      color: #bcbcbc;
+    }
+
+    .app-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .app-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: var(--yellow-soft);
+      font-size: 1.7rem;
+    }
+
+    .featured .app-icon {
+      background: var(--yellow);
+    }
+
+    .status {
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 7px 10px;
+      border-radius: 50px;
+      background: var(--soft);
+      color: var(--muted);
+    }
+
+    .featured .status {
+      background: rgba(255,255,255,.1);
+      color: white;
+    }
+
+    .app-content {
+      margin-top: 45px;
+    }
+
+    .app-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 9px;
+    }
+
+    .app-card h2 {
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    .app-description {
+      color: var(--muted);
+      font-size: .92rem;
+      max-width: 480px;
+    }
+
+    .app-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .app-meta span::after {
+      content: "·";
+      margin-left: 8px;
+    }
+
+    .app-meta span:last-child::after {
+      content: "";
+      margin: 0;
+    }
+
+    .app-link {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 22px;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    .featured .app-link {
+      color: var(--yellow);
+    }
+
+    /* LAB */
+
+    .lab {
+      border-top: 1px solid var(--line);
+      margin-top: 75px;
+      padding-top: 75px;
+    }
+
+    .lab-header {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 80px;
+      margin-bottom: 35px;
+    }
+
+    .label {
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .lab-intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .experiments {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .experiment {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      border-radius: 20px;
+      padding: 24px;
+      min-height: 170px;
+    }
+
+    .experiment-icon {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+    }
+
+    .experiment h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .experiment p {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    /* BOTTOM CTA */
+
+    .cta {
+      margin-top: 75px;
+      background: var(--yellow);
+      border-radius: 30px;
+      padding: 65px 45px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: .9;
+      letter-spacing: -.07em;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      max-width: 550px;
+      margin: auto;
+    }
+
+    .button {
+      display: inline-flex;
+      margin-top: 25px;
+      background: var(--ink);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-size: .76rem;
+      font-weight: 750;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 28px 24px 45px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+
+    /* HIDDEN FILTER ITEMS */
+
+    .app-card.hidden {
+      display: none;
+    }
+
+    @media (max-width: 760px) {
+
+      nav {
+        padding: 22px 20px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: .8rem;
+      }
+
+      .build-link {
+        padding: 7px 10px;
+      }
+
+      main {
+        padding: 35px 20px 70px;
+      }
+
+      .hero {
+        padding: 40px 0 65px;
+      }
+
+      .apps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-card {
+        min-height: 310px;
+      }
+
+      .lab-header {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .experiments {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        padding: 45px 25px;
+        border-radius: 24px;
+      }
+
+      footer {
+        padding: 25px 20px 35px;
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+
+  <a href="index.html" class="logo">
+    Studio Sunshine ☀️
+  </a>
+
+  <div class="nav-links">
+    
+    <a href="about.html">About</a>
+    <a href="howIBuild.html" class="build-link">How I Build →</a>
+  </div>
+
+</nav>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <div class="hero">
+
+    <div class="eyebrow">
+      <span class="sun"></span>
+      The Studio Sunshine portfolio
+    </div>
+
+    <h1>
+      Things<br>
+      I've built.
+    </h1>
+
+    <p>
+      A growing collection of apps, experiments and digital products
+      exploring business, money, lifestyle, events, AI and everyday life.
+    </p>
+
+  </div>
+
+
+  <!-- FILTERS -->
+
+  <div class="filters">
+
+    <button class="filter active" data-filter="all">
+      All
+    </button>
+
+    <button class="filter" data-filter="business">
+      Business
+    </button>
+
+    <button class="filter" data-filter="money">
+      Money
+    </button>
+
+    <button class="filter" data-filter="lifestyle">
+      Lifestyle
+    </button>
+
+    <button class="filter" data-filter="ai">
+      AI
+    </button>
+
+    <button class="filter" data-filter="events">
+      Events
+    </button>
+
+    <button class="filter" data-filter="fun">
+      Fun
+    </button>
+
+  </div>
+
+
+  <!-- APPS -->
+
+  <div class="apps-grid">
+
+
+    <!-- BOOKER BEE -->
+
+    <article
+      class="app-card featured"
+      data-category="events"
+      id="booker-bee"
+    >
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          🐝
+        </div>
+
+        <span class="status">
+          Flagship
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          Booker Bee
+        </h2>
+
+        <p class="app-description">
+          An event marketplace connecting people with local vendors
+          and services — making it easier to plan an event from one place.
+        </p>
+
+        <div class="app-meta">
+          <span>Events</span>
+          <span>Marketplace</span>
+          <span>South Africa</span>
+        </div>
+
+        <!-- Replace with your actual Booker Bee URL -->
+        <a href="#" class="app-link">
+          Explore Booker Bee →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- DOLLFIN -->
+
+    <article
+      class="app-card"
+      data-category="money lifestyle"
+      id="dollfin"
+    >
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          💸
+        </div>
+
+        <span class="status">
+          Building
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          DollFin
+        </h2>
+
+        <p class="app-description">
+          A soft-life calculator that turns your lifestyle goals
+          into a number, a timeline and a plan for getting there.
+        </p>
+
+        <div class="app-meta">
+          <span>Money</span>
+          <span>Lifestyle</span>
+        </div>
+
+        <a href="#" class="app-link">
+          Coming soon →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- BIZBEE -->
+
+    <article
+      class="app-card"
+      data-category="business"
+      id="bizbee"
+    >
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          🐝
+        </div>
+
+        <span class="status">
+          Live
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          BizBee
+        </h2>
+
+        <p class="app-description">
+          Tell it what you know, what you can afford and what
+          you're interested in. BizBee turns that into realistic
+          business ideas you could actually start.
+        </p>
+
+        <div class="app-meta">
+          <span>Business</span>
+          <span>Ideas</span>
+          <span>Tools</span>
+        </div>
+
+        <!-- Replace with your actual BizBee URL -->
+        <a href="#" class="app-link">
+          Open BizBee →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- CLAPBACK -->
+
+    <article
+      class="app-card"
+      data-category="ai lifestyle"
+      id="clapback-ai"
+    >
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          💬
+        </div>
+
+        <span class="status">
+          Building
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          Clapback AI
+        </h2>
+
+        <p class="app-description">
+          An AI reply assistant for those moments when you know
+          exactly how you feel but absolutely do not know what
+          to text back.
+        </p>
+
+        <div class="app-meta">
+          <span>AI</span>
+          <span>Social</span>
+          <span>Lifestyle</span>
+        </div>
+
+        <a href="#" class="app-link">
+          Coming soon →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- SPAZA STOCK -->
+
+    <article
+      class="app-card"
+      data-category="business"
+      id="spaza-stock"
+    >
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          📦
+        </div>
+
+        <span class="status">
+          Lab
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          Spaza Stock
+        </h2>
+
+        <p class="app-description">
+          Simple stock management designed around small local shops —
+          helping owners know what they have, what is moving and
+          what needs attention without unnecessary complexity.
+        </p>
+
+        <div class="app-meta">
+          <span>Business</span>
+          <span>Retail</span>
+          <span>SA</span>
+        </div>
+
+        <a href="#" class="app-link">
+          In the lab →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- GLOW UP -->
+
+    <article
+      class="app-card"
+      data-category="lifestyle"
+      id="glow-up"
+    >
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          ✨
+        </div>
+
+        <span class="status">
+          Experiment
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          Glow Up
+        </h2>
+
+        <p class="app-description">
+          A simple routine builder for organising skin, hair and
+          self-care routines without making the process complicated.
+        </p>
+
+        <div class="app-meta">
+          <span>Lifestyle</span>
+          <span>Self-care</span>
+        </div>
+
+        <a href="#" class="app-link">
+          View experiment →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- CHAOS COOKIE -->
+
+    <article
+      class="app-card"
+      data-category="fun"
+      id="chaos-cookie"
+    >
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          🍪
+        </div>
+
+        <span class="status">
+          Experiment
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          Chaos Cookie
+        </h2>
+
+        <p class="app-description">
+          One of those ideas that exists primarily because it sounded
+          fun. A little digital chaos, served one cookie at a time.
+        </p>
+
+        <div class="app-meta">
+          <span>Fun</span>
+          <span>Experiment</span>
+        </div>
+
+        <a href="#" class="app-link">
+          Explore →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- SUNSHINE ARCADE -->
+
+    <article
+      class="app-card"
+      data-category="fun"
+      id="sunshine-arcade"
+    >
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          🎮
+        </div>
+
+        <span class="status">
+          Experiments
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          Sunshine Arcade
+        </h2>
+
+        <p class="app-description">
+          A collection of small games and playful experiments,
+          including emoji games and simple arcade projects.
+        </p>
+
+        <div class="app-meta">
+          <span>Games</span>
+          <span>Fun</span>
+          <span>Experiments</span>
+        </div>
+
+        <a href="#" class="app-link">
+          More coming →
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <!-- LAB -->
+
+  <section class="lab">
+
+    <div class="lab-header">
+
+      <div class="label">
+        The Lab
+      </div>
+
+      <p class="lab-intro">
+        Not every idea starts as a company. Some are just things
+        worth exploring. The Lab is where smaller experiments,
+        prototypes and weird little ideas live.
+      </p>
+
+    </div>
+
+
+    <div class="experiments">
+
+      <div class="experiment">
+
+        <div class="experiment-icon">
+          💭
+        </div>
+
+        <h3>
+          New ideas
+        </h3>
+
+        <p>
+          Concepts currently being explored.
+        </p>
+
+      </div>
+
+
+      <div class="experiment">
+
+        <div class="experiment-icon">
+          🧪
+        </div>
+
+        <h3>
+          Prototypes
+        </h3>
+
+        <p>
+          Things being tested before they become products.
+        </p>
+
+      </div>
+
+
+      <div class="experiment">
+
+        <div class="experiment-icon">
+          🎮
+        </div>
+
+        <h3>
+          Just for fun
+        </h3>
+
+        <p>
+          Because building doesn't always have to be serious.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <div class="cta">
+
+    <h2>
+      One idea<br>
+      can become a product.
+    </h2>
+
+    <p>
+      See the thinking behind the things I build.
+    </p>
+
+    <a href="how-i-build.html" class="button">
+      How I Build →
+    </a>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div>
+    Studio Sunshine © 2026
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="apps.html">Apps</a>
+    <a href="about.html">About</a>
+    <a href="how-i-build.html">How I Build</a>
+    <a
+      href="https://github.com/"
+      target="_blank"
+      rel="noopener"
+    >
+      GitHub
+    </a>
+  </div>
+
+</footer>
+
+
+<script>
+
+  const filters = document.querySelectorAll(".filter");
+  const cards = document.querySelectorAll(".app-card");
+
+  filters.forEach(filter => {
+
+    filter.addEventListener("click", () => {
+
+      const selected = filter.dataset.filter;
+
+      filters.forEach(item => {
+        item.classList.remove("active");
+      });
+
+      filter.classList.add("active");
+
+      cards.forEach(card => {
+
+        const categories = card.dataset.category.split(" ");
+
+        if (
+          selected === "all" ||
+          categories.includes(selected)
+        ) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+
+      });
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
