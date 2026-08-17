@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Studio Sunshine ☀️ — Small Apps. Bright Ideas.</title>
-  <meta name="description" content="Studio Sunshine is an independent app studio building small digital products around business, money, lifestyle, events and everyday life.">
+  <meta
+    name="description"
+    content="Studio Sunshine is an independent app studio building useful, fun and occasionally ridiculous digital products around business, money, lifestyle, events and everyday life."
+  >
 
   <style>
     :root {
@@ -16,7 +19,6 @@
       --paper: #FFFEF9;
       --white: #FFFFFF;
       --line: #E9E6DC;
-      --green: #DDF5D8;
     }
 
     * {
@@ -47,6 +49,8 @@
       max-width: 1120px;
       margin: auto;
     }
+
+    /* NAV */
 
     nav {
       padding: 26px 24px;
@@ -84,6 +88,8 @@
       padding: 8px 13px;
       border-radius: 50px;
     }
+
+    /* MAIN */
 
     main {
       padding: 70px 24px 100px;
@@ -253,7 +259,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform .2s ease, box-shadow .2s ease;
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
     }
 
     .app:hover {
@@ -285,6 +293,10 @@
       padding: 7px 10px;
       border-radius: 50px;
       background: #f2f0e8;
+    }
+
+    .status.live {
+      background: var(--yellow-soft);
     }
 
     .app h3 {
@@ -441,19 +453,26 @@
 <body>
 
 <nav>
-  <a href="index.html" class="logo">Studio Sunshine ☀️</a>
+
+  <a href="index.html" class="logo">
+    Studio Sunshine ☀️
+  </a>
 
   <div class="nav-links">
-   <a href="apps.html">Apps</a>
+    <a href="apps.html">Apps</a>
     <a href="about.html">About</a>
-    <a href="howIBuild.html" class="build-link">How I Build →</a>
+    <a href="howIBuild.html" class="build-link">
+      How I Build →
+    </a>
   </div>
+
 </nav>
 
 
 <main>
 
   <!-- HERO -->
+
   <div class="hero">
 
     <div class="eyebrow">
@@ -476,11 +495,12 @@
 
 
   <!-- FEATURED -->
+
   <section>
 
     <div class="section-heading">
       <h2>Featured</h2>
-      <span>Flagship product</span>
+      <span>Live now</span>
     </div>
 
     <div class="featured">
@@ -488,11 +508,14 @@
       <div class="featured-main">
 
         <div class="featured-label">
-          Studio Sunshine · 001
+          Studio Sunshine · 001 · Live
         </div>
 
         <div>
-          <h3>Booker Bee</h3>
+
+          <h3>
+            Booker Bee
+          </h3>
 
           <p>
             An event planning platform connecting people with
@@ -501,26 +524,35 @@
           </p>
 
           <a
-  href="https://studiosunsh1ne.github.io/bookerbee/"
-  class="app-link"
-  target="_blank"
-  rel="noopener"
->
-            View project ↓
+            href="https://studiosunsh1ne.github.io/bookerbee/"
+            class="button"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Booker Bee →
           </a>
+
         </div>
 
       </div>
 
+
       <div class="featured-side">
 
-        <div class="bee">🐝</div>
+        <div class="bee">
+          🐝
+        </div>
 
         <div>
-          <h4>Plan the whole thing.</h4>
+
+          <h4>
+            Plan the whole thing.
+          </h4>
+
           <p>
             Vendors, services and event planning in one place.
           </p>
+
         </div>
 
       </div>
@@ -531,101 +563,156 @@
 
 
   <!-- APPS -->
+
   <section id="apps">
 
     <div class="section-heading">
-      <h2>From the studio</h2>
-      <span>Current projects</span>
+
+      <h2>
+        From the studio
+      </h2>
+
+      <span>
+        Coming soon
+      </span>
+
     </div>
 
 
     <div class="apps">
 
-      <article class="app" id="booker-bee">
+
+      <!-- SIDE HUSTLA SA -->
+
+      <article class="app" id="side-hustla-sa">
 
         <div class="app-top">
-          <div class="app-icon">🐝</div>
-          <span class="status">Building</span>
+
+          <div class="app-icon">
+            💡
+          </div>
+
+          <span class="status">
+            Coming Soon
+          </span>
+
         </div>
 
         <div>
-          <h3>Booker Bee</h3>
+
+          <h3>
+            Side Hustla SA
+          </h3>
 
           <p>
-            An event marketplace built around the way people
-            actually plan events — discover trusted local vendors,
-            enquire and bring everything together.
+            A practical side-hustle idea generator built for South
+            Africans who want to turn their skills, interests and
+            available budget into something they can actually start.
           </p>
 
-         <a
-  href="https://studiosunsh1ne.github.io/bookerbee/"
-  class="app-link"
-  target="_blank"
-  rel="noopener"
->
-            Featured above ↑
+          <a href="apps.html#side-hustla-sa" class="app-link">
+            Coming soon →
           </a>
+
         </div>
 
       </article>
 
+
+      <!-- SPAZA STOCK -->
+
+      <article class="app" id="spaza-stock">
+
+        <div class="app-top">
+
+          <div class="app-icon">
+            📦
+          </div>
+
+          <span class="status">
+            Coming Soon
+          </span>
+
+        </div>
+
+        <div>
+
+          <h3>
+            Spaza Stock
+          </h3>
+
+          <p>
+            Simple stock management designed around small local
+            shops — helping owners know what they have, what is
+            moving and what needs attention without unnecessary complexity.
+          </p>
+
+          <a href="apps.html#spaza-stock" class="app-link">
+            Coming soon →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- DOLLFIN -->
 
       <article class="app" id="dollfin">
 
         <div class="app-top">
-          <div class="app-icon">💸</div>
-          <span class="status">Building</span>
+
+          <div class="app-icon">
+            💸
+          </div>
+
+          <span class="status">
+            Coming Soon
+          </span>
+
         </div>
 
         <div>
-          <h3>DollFin</h3>
+
+          <h3>
+            DollFin
+          </h3>
 
           <p>
-            A soft-life calculator that turns your lifestyle goals
-            into a number, a timeline and a plan for getting there.
+            A soft-life financial planner that turns your lifestyle
+            goals into a number, a timeline and a plan for getting there.
           </p>
 
-          <a href="#dollfin" class="app-link">
+          <a href="apps.html#dollfin" class="app-link">
             Coming soon →
           </a>
+
         </div>
 
       </article>
 
 
-      <article class="app" id="bizbee">
+      <!-- CLAPBACK AI -->
+
+      <article class="app" id="clapback-ai">
 
         <div class="app-top">
-          <div class="app-icon">🐝</div>
-          <span class="status">Live</span>
+
+          <div class="app-icon">
+            💬
+          </div>
+
+          <span class="status">
+            Coming Soon
+          </span>
+
         </div>
 
         <div>
-          <h3>BizBee</h3>
 
-          <p>
-            A business idea generator that works backwards from
-            what you know, what you can afford and what you could
-            realistically start.
-          </p>
-
-          <a href="#bizbee" class="app-link">
-            Explore BizBee →
-          </a>
-        </div>
-
-      </article>
-
-
-      <article class="app" id="clapback">
-
-        <div class="app-top">
-          <div class="app-icon">💬</div>
-          <span class="status">Building</span>
-        </div>
-
-        <div>
-          <h3>Clapback AI</h3>
+          <h3>
+            ClapbackAI
+          </h3>
 
           <p>
             An AI reply assistant for those moments when you know
@@ -633,59 +720,55 @@
             to text back.
           </p>
 
-          <a href="#clapback" class="app-link">
+          <a href="apps.html#clapback-ai" class="app-link">
             Coming soon →
           </a>
+
         </div>
 
       </article>
 
 
-      <article class="app" id="spaza-stock">
+      <!-- BOOKER BEE -->
+
+      <article class="app" id="booker-bee-card">
 
         <div class="app-top">
-          <div class="app-icon">📦</div>
-          <span class="status">Idea</span>
+
+          <div class="app-icon">
+            🐝
+          </div>
+
+          <span class="status live">
+            Live
+          </span>
+
         </div>
 
         <div>
-          <h3>Spaza Stock</h3>
+
+          <h3>
+            Booker Bee
+          </h3>
 
           <p>
-            A simple stock management idea designed around the
-            realities of small local shops — keeping inventory
-            management simple instead of turning it into accounting software.
+            Discover vendors, plan your event and connect with the
+            people who can bring it all together.
           </p>
 
-          <a href="#spaza-stock" class="app-link">
-            In the lab →
+          <a
+            href="https://studiosunsh1ne.github.io/bookerbee/"
+            class="app-link"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Booker Bee →
           </a>
+
         </div>
 
       </article>
 
-
-      <article class="app" id="arcade">
-
-        <div class="app-top">
-          <div class="app-icon">🎮</div>
-          <span class="status">Experiments</span>
-        </div>
-
-        <div>
-          <h3>Sunshine Arcade</h3>
-
-          <p>
-            A collection of small games and playful experiments —
-            because not every idea needs to solve a serious problem.
-          </p>
-
-          <a href="#arcade" class="app-link">
-            More coming →
-          </a>
-        </div>
-
-      </article>
 
     </div>
 
@@ -693,6 +776,7 @@
 
 
   <!-- STUDIO -->
+
   <section>
 
     <div class="studio">
@@ -727,17 +811,19 @@
 
 
   <!-- CTA -->
+
   <section class="cta">
 
     <h2>
-      See how<br>things get made.
+      See how<br>
+      things get made.
     </h2>
 
     <p>
       A little look inside the thinking behind Studio Sunshine.
     </p>
 
-    <a href="how-i-build.html" class="button">
+    <a href="howIBuild.html" class="button">
       How I Build →
     </a>
 
@@ -748,13 +834,36 @@
 
 <footer>
 
-  <div>Studio Sunshine © 2026</div>
+  <div>
+    Studio Sunshine © 2026
+  </div>
 
   <div class="footer-links">
-    <a href="index.html">Apps</a>
-    <a href="about.html">About</a>
-    <a href="howIBuild.html">How I Build</a>
-    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="apps.html">
+      Apps
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="howIBuild.html">
+      How I Build
+    </a>
+
+    <a
+      href="https://github.com/studiosunsh1ne"
+      target="_blank"
+      rel="noopener"
+    >
+      GitHub
+    </a>
+
   </div>
 
 </footer>
