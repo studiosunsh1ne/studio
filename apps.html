@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Apps — Studio Sunshine ☀️</title>
-  <meta name="description" content="Explore the apps, experiments and digital products created by Studio Sunshine.">
+  <meta
+    name="description"
+    content="Explore the apps and digital products being built by Studio Sunshine."
+  >
 
   <style>
     :root {
@@ -196,10 +199,7 @@
       border-color: var(--ink);
     }
 
-    .app-card.featured .app-description {
-      color: #bcbcbc;
-    }
-
+    .app-card.featured .app-description,
     .app-card.featured .app-meta {
       color: #bcbcbc;
     }
@@ -244,17 +244,11 @@
       margin-top: 45px;
     }
 
-    .app-title-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 9px;
-    }
-
     .app-card h2 {
       font-size: 1.8rem;
       line-height: 1;
       letter-spacing: -.05em;
+      margin-bottom: 9px;
     }
 
     .app-description {
@@ -309,7 +303,6 @@
       display: grid;
       grid-template-columns: 250px 1fr;
       gap: 80px;
-      margin-bottom: 35px;
     }
 
     .label {
@@ -325,36 +318,7 @@
       font-size: 1.05rem;
     }
 
-    .experiments {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .experiment {
-      border: 1px solid var(--line);
-      background: var(--soft);
-      border-radius: 20px;
-      padding: 24px;
-      min-height: 170px;
-    }
-
-    .experiment-icon {
-      font-size: 1.4rem;
-      margin-bottom: 25px;
-    }
-
-    .experiment h3 {
-      font-size: 1rem;
-      margin-bottom: 5px;
-    }
-
-    .experiment p {
-      color: var(--muted);
-      font-size: .8rem;
-    }
-
-    /* BOTTOM CTA */
+    /* CTA */
 
     .cta {
       margin-top: 75px;
@@ -448,10 +412,6 @@
         gap: 25px;
       }
 
-      .experiments {
-        grid-template-columns: 1fr;
-      }
-
       .cta {
         padding: 45px 25px;
         border-radius: 24px;
@@ -475,7 +435,6 @@
   </a>
 
   <div class="nav-links">
-    
     <a href="about.html">About</a>
     <a href="howIBuild.html" class="build-link">How I Build →</a>
   </div>
@@ -496,12 +455,12 @@
 
     <h1>
       Things<br>
-      I've built.
+      I'm building.
     </h1>
 
     <p>
-      A growing collection of apps, experiments and digital products
-      exploring business, money, lifestyle, events, AI and everyday life.
+      A growing collection of apps and digital products exploring
+      business, money, lifestyle, events, AI and everyday life.
     </p>
 
   </div>
@@ -511,33 +470,12 @@
 
   <div class="filters">
 
-    <button class="filter active" data-filter="all">
-      All
-    </button>
-
-    <button class="filter" data-filter="business">
-      Business
-    </button>
-
-    <button class="filter" data-filter="money">
-      Money
-    </button>
-
-    <button class="filter" data-filter="lifestyle">
-      Lifestyle
-    </button>
-
-    <button class="filter" data-filter="ai">
-      AI
-    </button>
-
-    <button class="filter" data-filter="events">
-      Events
-    </button>
-
-    <button class="filter" data-filter="fun">
-      Fun
-    </button>
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="business">Business</button>
+    <button class="filter" data-filter="money">Money</button>
+    <button class="filter" data-filter="lifestyle">Lifestyle</button>
+    <button class="filter" data-filter="ai">AI</button>
+    <button class="filter" data-filter="events">Events</button>
 
   </div>
 
@@ -562,11 +500,10 @@
         </div>
 
         <span class="status">
-          Flagship
+          Live
         </span>
 
       </div>
-
 
       <div class="app-content">
 
@@ -575,8 +512,9 @@
         </h2>
 
         <p class="app-description">
-          An event marketplace connecting people with local vendors
-          and services — making it easier to plan an event from one place.
+          An event discovery, planning and vendor booking platform
+          helping people find the right people and services for
+          their events.
         </p>
 
         <div class="app-meta">
@@ -585,60 +523,13 @@
           <span>South Africa</span>
         </div>
 
-      <!-- Booker Bee -->
-<a
-  href="https://studiosunsh1ne.github.io/bookerbee/"
-  class="app-link"
-  target="_blank"
-  rel="noopener"
->
-  Explore Booker Bee →
-</a>
-
-      </div>
-
-    </article>
-
-
-    <!-- DOLLFIN -->
-
-    <article
-      class="app-card"
-      data-category="money lifestyle"
-      id="dollfin"
-    >
-
-      <div class="app-top">
-
-        <div class="app-icon">
-          💸
-        </div>
-
-        <span class="status">
-          Building
-        </span>
-
-      </div>
-
-
-      <div class="app-content">
-
-        <h2>
-          DollFin
-        </h2>
-
-        <p class="app-description">
-          A soft-life calculator that turns your lifestyle goals
-          into a number, a timeline and a plan for getting there.
-        </p>
-
-        <div class="app-meta">
-          <span>Money</span>
-          <span>Lifestyle</span>
-        </div>
-
-        <a href="#" class="app-link">
-          Coming soon →
+        <a
+          href="https://studiosunsh1ne.github.io/bookerbee/"
+          class="app-link"
+          target="_blank"
+          rel="noopener"
+        >
+          Explore Booker Bee →
         </a>
 
       </div>
@@ -646,92 +537,42 @@
     </article>
 
 
-    <!-- BIZBEE -->
+    <!-- SIDE HUSTLA SA -->
 
     <article
       class="app-card"
       data-category="business"
-      id="bizbee"
+      id="side-hustla-sa"
     >
 
       <div class="app-top">
 
         <div class="app-icon">
-          🐝
+          💡
         </div>
 
         <span class="status">
-          Live
+          Coming Soon
         </span>
 
       </div>
 
-
       <div class="app-content">
 
         <h2>
-          BizBee
+          Side Hustla SA
         </h2>
 
         <p class="app-description">
-          Tell it what you know, what you can afford and what
-          you're interested in. BizBee turns that into realistic
-          business ideas you could actually start.
+          A practical side-hustle idea generator built for South
+          Africans who want to turn their skills, interests and
+          available budget into something they can actually start.
         </p>
 
         <div class="app-meta">
           <span>Business</span>
           <span>Ideas</span>
-          <span>Tools</span>
-        </div>
-
-        <!-- Replace with your actual BizBee URL -->
-        <a href="#" class="app-link">
-          Open BizBee →
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- CLAPBACK -->
-
-    <article
-      class="app-card"
-      data-category="ai lifestyle"
-      id="clapback-ai"
-    >
-
-      <div class="app-top">
-
-        <div class="app-icon">
-          💬
-        </div>
-
-        <span class="status">
-          Building
-        </span>
-
-      </div>
-
-
-      <div class="app-content">
-
-        <h2>
-          Clapback AI
-        </h2>
-
-        <p class="app-description">
-          An AI reply assistant for those moments when you know
-          exactly how you feel but absolutely do not know what
-          to text back.
-        </p>
-
-        <div class="app-meta">
-          <span>AI</span>
-          <span>Social</span>
-          <span>Lifestyle</span>
+          <span>SA</span>
         </div>
 
         <a href="#" class="app-link">
@@ -758,11 +599,10 @@
         </div>
 
         <span class="status">
-          Lab
+          Coming Soon
         </span>
 
       </div>
-
 
       <div class="app-content">
 
@@ -783,7 +623,7 @@
         </div>
 
         <a href="#" class="app-link">
-          In the lab →
+          Coming soon →
         </a>
 
       </div>
@@ -791,45 +631,44 @@
     </article>
 
 
-    <!-- GLOW UP -->
+    <!-- DOLLFIN -->
 
     <article
       class="app-card"
-      data-category="lifestyle"
-      id="glow-up"
+      data-category="money lifestyle"
+      id="dollfin"
     >
 
       <div class="app-top">
 
         <div class="app-icon">
-          ✨
+          💸
         </div>
 
         <span class="status">
-          Experiment
+          Coming Soon
         </span>
 
       </div>
 
-
       <div class="app-content">
 
         <h2>
-          Glow Up
+          DollFin
         </h2>
 
         <p class="app-description">
-          A simple routine builder for organising skin, hair and
-          self-care routines without making the process complicated.
+          A soft-life financial planner that turns your lifestyle
+          goals into a number, a timeline and a plan for getting there.
         </p>
 
         <div class="app-meta">
+          <span>Money</span>
           <span>Lifestyle</span>
-          <span>Self-care</span>
         </div>
 
         <a href="#" class="app-link">
-          View experiment →
+          Coming soon →
         </a>
 
       </div>
@@ -837,92 +676,46 @@
     </article>
 
 
-    <!-- CHAOS COOKIE -->
+    <!-- CLAPBACK AI -->
 
     <article
       class="app-card"
-      data-category="fun"
-      id="chaos-cookie"
+      data-category="ai lifestyle"
+      id="clapback-ai"
     >
 
       <div class="app-top">
 
         <div class="app-icon">
-          🍪
+          💬
         </div>
 
         <span class="status">
-          Experiment
+          Coming Soon
         </span>
 
       </div>
 
-
       <div class="app-content">
 
         <h2>
-          Chaos Cookie
+          ClapbackAI
         </h2>
 
         <p class="app-description">
-          One of those ideas that exists primarily because it sounded
-          fun. A little digital chaos, served one cookie at a time.
+          An AI reply assistant for those moments when you know
+          exactly how you feel but absolutely do not know what
+          to text back.
         </p>
 
         <div class="app-meta">
-          <span>Fun</span>
-          <span>Experiment</span>
+          <span>AI</span>
+          <span>Social</span>
+          <span>Lifestyle</span>
         </div>
 
         <a href="#" class="app-link">
-          Explore →
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- SUNSHINE ARCADE -->
-
-    <article
-      class="app-card"
-      data-category="fun"
-      id="sunshine-arcade"
-    >
-
-      <div class="app-top">
-
-        <div class="app-icon">
-          🎮
-        </div>
-
-        <span class="status">
-          Experiments
-        </span>
-
-      </div>
-
-
-      <div class="app-content">
-
-        <h2>
-          Sunshine Arcade
-        </h2>
-
-        <p class="app-description">
-          A collection of small games and playful experiments,
-          including emoji games and simple arcade projects.
-        </p>
-
-        <div class="app-meta">
-          <span>Games</span>
-          <span>Fun</span>
-          <span>Experiments</span>
-        </div>
-
-        <a href="#" class="app-link">
-          More coming →
+          Coming soon →
         </a>
 
       </div>
@@ -943,65 +736,10 @@
       </div>
 
       <p class="lab-intro">
-        Not every idea starts as a company. Some are just things
-        worth exploring. The Lab is where smaller experiments,
-        prototypes and weird little ideas live.
+        Not every idea needs to become a product. Studio Sunshine
+        is a place to explore, prototype and build — with the best
+        ideas eventually finding their way into the world.
       </p>
-
-    </div>
-
-
-    <div class="experiments">
-
-      <div class="experiment">
-
-        <div class="experiment-icon">
-          💭
-        </div>
-
-        <h3>
-          New ideas
-        </h3>
-
-        <p>
-          Concepts currently being explored.
-        </p>
-
-      </div>
-
-
-      <div class="experiment">
-
-        <div class="experiment-icon">
-          🧪
-        </div>
-
-        <h3>
-          Prototypes
-        </h3>
-
-        <p>
-          Things being tested before they become products.
-        </p>
-
-      </div>
-
-
-      <div class="experiment">
-
-        <div class="experiment-icon">
-          🎮
-        </div>
-
-        <h3>
-          Just for fun
-        </h3>
-
-        <p>
-          Because building doesn't always have to be serious.
-        </p>
-
-      </div>
 
     </div>
 
@@ -1021,7 +759,7 @@
       See the thinking behind the things I build.
     </p>
 
-    <a href="how-i-build.html" class="button">
+    <a href="howIBuild.html" class="button">
       How I Build →
     </a>
 
@@ -1037,17 +775,20 @@
   </div>
 
   <div class="footer-links">
+
     <a href="index.html">Home</a>
     <a href="apps.html">Apps</a>
     <a href="about.html">About</a>
     <a href="howIBuild.html">How I Build</a>
+
     <a
-      href="https://github.com/"
+      href="https://github.com/studiosunsh1ne"
       target="_blank"
       rel="noopener"
     >
       GitHub
     </a>
+
   </div>
 
 </footer>
