@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Studio Sunshine ☀️ — Small Apps. Bright Ideas.</title>
+
   <meta
     name="description"
     content="Studio Sunshine is an independent app studio building useful, fun and occasionally ridiculous digital products around business, money, lifestyle, events and everyday life."
@@ -50,7 +51,10 @@
       margin: auto;
     }
 
-    /* NAV */
+
+    /* =========================
+       NAV
+    ========================= */
 
     nav {
       padding: 26px 24px;
@@ -89,13 +93,19 @@
       border-radius: 50px;
     }
 
-    /* MAIN */
+
+    /* =========================
+       MAIN
+    ========================= */
 
     main {
       padding: 70px 24px 100px;
     }
 
-    /* HERO */
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       padding: 55px 0 105px;
@@ -110,7 +120,7 @@
       font-weight: 800;
       letter-spacing: .14em;
       text-transform: uppercase;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
     .sun {
@@ -118,6 +128,19 @@
       height: 10px;
       background: var(--yellow);
       border-radius: 50%;
+    }
+
+    .hero-logo {
+      width: 100%;
+      max-width: 850px;
+      margin-bottom: 40px;
+    }
+
+    .hero-logo img {
+      display: block;
+      width: 100%;
+      max-width: 850px;
+      height: auto;
     }
 
     h1 {
@@ -138,7 +161,10 @@
       color: var(--ink);
     }
 
-    /* SECTION */
+
+    /* =========================
+       SECTIONS
+    ========================= */
 
     section {
       border-top: 1px solid var(--line);
@@ -163,7 +189,10 @@
       font-size: .8rem;
     }
 
-    /* FEATURED */
+
+    /* =========================
+       FEATURED
+    ========================= */
 
     .featured {
       display: grid;
@@ -242,7 +271,10 @@
       transform: translateY(-2px);
     }
 
-    /* APP GRID */
+
+    /* =========================
+       APP GRID
+    ========================= */
 
     .apps {
       display: grid;
@@ -318,7 +350,10 @@
       font-weight: 750;
     }
 
-    /* STUDIO */
+
+    /* =========================
+       STUDIO
+    ========================= */
 
     .studio {
       display: grid;
@@ -347,7 +382,10 @@
       margin-bottom: 0;
     }
 
-    /* CTA */
+
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
       background: var(--yellow);
@@ -374,7 +412,10 @@
       color: white;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 28px 24px 45px;
@@ -392,6 +433,11 @@
     .footer-links a:hover {
       color: var(--ink);
     }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 760px) {
 
@@ -414,6 +460,10 @@
 
       .hero {
         padding: 40px 0 70px;
+      }
+
+      .hero-logo {
+        margin-bottom: 30px;
       }
 
       .featured {
@@ -450,7 +500,13 @@
   </style>
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     NAV
+========================= -->
 
 <nav>
 
@@ -459,11 +515,19 @@
   </a>
 
   <div class="nav-links">
-    <a href="apps.html">Apps</a>
-    <a href="about.html">About</a>
+
+    <a href="apps.html">
+      Apps
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
     <a href="howIBuild.html" class="build-link">
       How I Build →
     </a>
+
   </div>
 
 </nav>
@@ -471,372 +535,452 @@
 
 <main>
 
-  <!-- HERO -->
 
-  <div class="hero">
+<!-- =========================
+     HERO
+========================= -->
 
-    <div class="eyebrow">
-      <span class="sun"></span>
-      Independent app studio · South Africa
-    </div>
+<div class="hero">
 
-    <h1>
-      Small apps.<br>
-      Bright ideas.
-    </h1>
+  <div class="eyebrow">
+    <span class="sun"></span>
+    Independent app studio · South Africa
+  </div>
 
-    <p>
-      Studio Sunshine is an independent app studio building
-      <strong>useful, fun and occasionally ridiculous digital products</strong>
-      around business, money, lifestyle, events and everyday life.
-    </p>
+
+  <div class="hero-logo">
+
+    <img
+      src="https://i.ibb.co/gZRqdk9K/file-00000000fbf081f48d73e2e09322299e.png"
+      alt="Studio Sunshine logo"
+    >
 
   </div>
 
 
-  <!-- FEATURED -->
+  <h1>
+    Small apps.<br>
+    Bright ideas.
+  </h1>
 
-  <section>
 
-    <div class="section-heading">
-      <h2>Featured</h2>
-      <span>Live now</span>
+  <p>
+    Studio Sunshine is an independent app studio building
+    <strong>useful, fun and occasionally ridiculous digital products</strong>
+    around business, money, lifestyle, events and everyday life.
+  </p>
+
+</div>
+
+
+<!-- =========================
+     FEATURED
+========================= -->
+
+<section>
+
+  <div class="section-heading">
+
+    <h2>
+      Featured
+    </h2>
+
+    <span>
+      Live now
+    </span>
+
+  </div>
+
+
+  <div class="featured">
+
+
+    <div class="featured-main">
+
+      <div class="featured-label">
+        Studio Sunshine · 001 · Live
+      </div>
+
+
+      <div>
+
+        <h3>
+          Booker Bee
+        </h3>
+
+        <p>
+          An event planning platform connecting people with
+          local vendors — making it easier to discover,
+          compare and book the people who bring an event together.
+        </p>
+
+
+        <a
+          href="https://studiosunsh1ne.github.io/bookerbee/"
+          class="button"
+          target="_blank"
+          rel="noopener"
+        >
+          Explore Booker Bee →
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="featured">
 
-      <div class="featured-main">
+    <div class="featured-side">
 
-        <div class="featured-label">
-          Studio Sunshine · 001 · Live
+      <div class="bee">
+        🐝
+      </div>
+
+
+      <div>
+
+        <h4>
+          Plan the whole thing.
+        </h4>
+
+        <p>
+          Vendors, services and event planning in one place.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CURRENT PROJECTS
+========================= -->
+
+<section id="apps">
+
+  <div class="section-heading">
+
+    <h2>
+      From the studio
+    </h2>
+
+    <span>
+      Current projects
+    </span>
+
+  </div>
+
+
+  <div class="apps">
+
+
+    <!-- SIDE HUSTLA SA -->
+
+    <article class="app" id="side-hustla-sa">
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          💡
         </div>
 
-        <div>
-
-          <h3>
-            Booker Bee
-          </h3>
-
-          <p>
-            An event planning platform connecting people with
-            local vendors — making it easier to discover,
-            compare and book the people who bring an event together.
-          </p>
-
-          <a
-            href="https://studiosunsh1ne.github.io/bookerbee/"
-            class="button"
-            target="_blank"
-            rel="noopener"
-          >
-            Explore Booker Bee →
-          </a>
-
-        </div>
+        <span class="status">
+          Coming Soon
+        </span>
 
       </div>
 
 
-      <div class="featured-side">
+      <div>
 
-        <div class="bee">
+        <h3>
+          Side Hustla SA
+        </h3>
+
+        <p>
+          A practical side-hustle idea generator built for South
+          Africans who want to turn their skills, interests and
+          available budget into something they can actually start.
+        </p>
+
+
+        <a
+          href="https://studiosunsh1ne.github.io/side-hustla-sa/"
+          class="app-link"
+          target="_blank"
+          rel="noopener"
+        >
+          Coming soon →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- SPAZA STOCK -->
+
+    <article class="app" id="spaza-stock">
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          📦
+        </div>
+
+        <span class="status">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Spaza Stock
+        </h3>
+
+        <p>
+          Simple stock management designed around small local
+          shops — helping owners know what they have, what is
+          moving and what needs attention without unnecessary complexity.
+        </p>
+
+
+        <a
+          href="https://studiosunsh1ne.github.io/spaza-stock/"
+          class="app-link"
+          target="_blank"
+          rel="noopener"
+        >
+          Coming soon →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- DOLLFIN -->
+
+    <article class="app" id="dollfin">
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          💸
+        </div>
+
+        <span class="status">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          DollFin
+        </h3>
+
+        <p>
+          A soft-life financial planner that turns your lifestyle
+          goals into a number, a timeline and a plan for getting there.
+        </p>
+
+
+        <a
+          href="https://studiosunsh1ne.github.io/dollfin/"
+          class="app-link"
+          target="_blank"
+          rel="noopener"
+        >
+          Coming soon →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- CLAPBACK AI -->
+
+    <article class="app" id="clapback-ai">
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          💬
+        </div>
+
+        <span class="status">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          ClapbackAI
+        </h3>
+
+        <p>
+          An AI reply assistant for those moments when you know
+          exactly how you feel but absolutely do not know what
+          to text back.
+        </p>
+
+
+        <a
+          href="https://studiosunsh1ne.github.io/clapbackai/"
+          class="app-link"
+          target="_blank"
+          rel="noopener"
+        >
+          Coming soon →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- BOOKER BEE -->
+
+    <article class="app" id="booker-bee-card">
+
+      <div class="app-top">
+
+        <div class="app-icon">
           🐝
         </div>
 
-        <div>
-
-          <h4>
-            Plan the whole thing.
-          </h4>
-
-          <p>
-            Vendors, services and event planning in one place.
-          </p>
-
-        </div>
+        <span class="status live">
+          Live
+        </span>
 
       </div>
 
-    </div>
 
-  </section>
+      <div>
 
-
-  <!-- APPS -->
-
-  <section id="apps">
-
-    <div class="section-heading">
-
-      <h2>
-        From the studio
-      </h2>
-
-      <span>
-        Coming soon
-      </span>
-
-    </div>
-
-
-    <div class="apps">
-
-
-      <!-- SIDE HUSTLA SA -->
-
-      <article class="app" id="side-hustla-sa">
-
-        <div class="app-top">
-
-          <div class="app-icon">
-            💡
-          </div>
-
-          <span class="status">
-            Coming Soon
-          </span>
-
-        </div>
-
-        <div>
-
-          <h3>
-            Side Hustla SA
-          </h3>
-
-          <p>
-            A practical side-hustle idea generator built for South
-            Africans who want to turn their skills, interests and
-            available budget into something they can actually start.
-          </p>
-
-          <a href="apps.html#side-hustla-sa" class="app-link">
-            Coming soon →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- SPAZA STOCK -->
-
-      <article class="app" id="spaza-stock">
-
-        <div class="app-top">
-
-          <div class="app-icon">
-            📦
-          </div>
-
-          <span class="status">
-            Coming Soon
-          </span>
-
-        </div>
-
-        <div>
-
-          <h3>
-            Spaza Stock
-          </h3>
-
-          <p>
-            Simple stock management designed around small local
-            shops — helping owners know what they have, what is
-            moving and what needs attention without unnecessary complexity.
-          </p>
-
-          <a href="apps.html#spaza-stock" class="app-link">
-            Coming soon →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- DOLLFIN -->
-
-      <article class="app" id="dollfin">
-
-        <div class="app-top">
-
-          <div class="app-icon">
-            💸
-          </div>
-
-          <span class="status">
-            Coming Soon
-          </span>
-
-        </div>
-
-        <div>
-
-          <h3>
-            DollFin
-          </h3>
-
-          <p>
-            A soft-life financial planner that turns your lifestyle
-            goals into a number, a timeline and a plan for getting there.
-          </p>
-
-          <a href="apps.html#dollfin" class="app-link">
-            Coming soon →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- CLAPBACK AI -->
-
-      <article class="app" id="clapback-ai">
-
-        <div class="app-top">
-
-          <div class="app-icon">
-            💬
-          </div>
-
-          <span class="status">
-            Coming Soon
-          </span>
-
-        </div>
-
-        <div>
-
-          <h3>
-            ClapbackAI
-          </h3>
-
-          <p>
-            An AI reply assistant for those moments when you know
-            exactly how you feel but absolutely do not know what
-            to text back.
-          </p>
-
-          <a href="apps.html#clapback-ai" class="app-link">
-            Coming soon →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- BOOKER BEE -->
-
-      <article class="app" id="booker-bee-card">
-
-        <div class="app-top">
-
-          <div class="app-icon">
-            🐝
-          </div>
-
-          <span class="status live">
-            Live
-          </span>
-
-        </div>
-
-        <div>
-
-          <h3>
-            Booker Bee
-          </h3>
-
-          <p>
-            Discover vendors, plan your event and connect with the
-            people who can bring it all together.
-          </p>
-
-          <a
-            href="https://studiosunsh1ne.github.io/bookerbee/"
-            class="app-link"
-            target="_blank"
-            rel="noopener"
-          >
-            Explore Booker Bee →
-          </a>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- STUDIO -->
-
-  <section>
-
-    <div class="studio">
-
-      <div class="label">
-        The studio
-      </div>
-
-      <div class="studio-copy">
+        <h3>
+          Booker Bee
+        </h3>
 
         <p>
-          Studio Sunshine is intentionally small.
-          It's a place to explore ideas, build products and learn
-          what happens when those products meet real people.
+          Discover vendors, plan your event and connect with the
+          people who can bring it all together.
         </p>
 
-        <p>
-          The apps don't all have to look alike or solve the same problem.
-          What connects them is the way they're made:
-          start with an idea, build something useful and put it into the world.
-        </p>
 
-        <p>
-          Built from South Africa, for wherever the idea takes me.
-        </p>
+        <a
+          href="https://studiosunsh1ne.github.io/bookerbee/"
+          class="app-link"
+          target="_blank"
+          rel="noopener"
+        >
+          Explore Booker Bee →
+        </a>
 
       </div>
 
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     THE STUDIO
+========================= -->
+
+<section>
+
+  <div class="studio">
+
+
+    <div class="label">
+      The studio
     </div>
 
-  </section>
+
+    <div class="studio-copy">
+
+      <p>
+        Studio Sunshine is intentionally small.
+        It's a place to explore ideas, build products and learn
+        what happens when those products meet real people.
+      </p>
 
 
-  <!-- CTA -->
+      <p>
+        The apps don't all have to look alike or solve the same problem.
+        What connects them is the way they're made:
+        start with an idea, build something useful and put it into the world.
+      </p>
 
-  <section class="cta">
 
-    <h2>
-      See how<br>
-      things get made.
-    </h2>
+      <p>
+        Built from South Africa, for wherever the idea takes me.
+      </p>
 
-    <p>
-      A little look inside the thinking behind Studio Sunshine.
-    </p>
+    </div>
 
-    <a href="howIBuild.html" class="button">
-      How I Build →
-    </a>
+  </div>
 
-  </section>
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+  <h2>
+    See how<br>
+    things get made.
+  </h2>
+
+
+  <p>
+    A little look inside the thinking behind Studio Sunshine.
+  </p>
+
+
+  <a
+    href="howIBuild.html"
+    class="button"
+  >
+    How I Build →
+  </a>
+
+</section>
+
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
   <div>
     Studio Sunshine © 2026
   </div>
+
 
   <div class="footer-links">
 
@@ -867,6 +1011,7 @@
   </div>
 
 </footer>
+
 
 </body>
 </html>
