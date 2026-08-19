@@ -862,7 +862,6 @@
       );
     }
 
-
     const html = await response.text();
 
     const parser = new DOMParser();
@@ -874,34 +873,29 @@
 
 
     /*
-      apps.html contains the master
-      .apps-grid with all app cards.
+      apps.html currently has two card classes:
+      .app-card and .app
 
-      We intentionally fetch ONLY .app cards.
-      The Featured section above remains untouched.
+      Grab BOTH so every app appears.
     */
 
     const sourceApps =
       Array.from(
-        doc.querySelectorAll(".apps-grid .app")
+        doc.querySelectorAll(
+          ".apps-grid .app-card, .apps-grid .app"
+        )
       );
 
 
     if (!sourceApps.length) {
-
       throw new Error(
         "No app cards were found inside apps.html."
       );
-
     }
 
 
     appsContainer.innerHTML = "";
 
-
-    /*
-      Clone every app card.
-    */
 
     sourceApps.forEach(function(app) {
 
@@ -909,7 +903,17 @@
         app.cloneNode(true);
 
       /*
-        Prevent duplicate IDs on the homepage.
+        Give every fetched card the homepage
+        .app layout class.
+
+        Existing .app-card class is retained
+        so its content remains intact.
+      */
+
+      clone.classList.add("app");
+
+      /*
+        Prevent duplicate IDs.
       */
 
       clone.removeAttribute("id");
