@@ -802,30 +802,153 @@
      APP CARDS FETCHED FROM apps.html
 ========================= -->
 
-<section id="apps">
+<script>
 
-  <div class="section-heading">
+(async function loadAppsFromAppsPage() {
 
-    <h2>
-      From the studio
-    </h2>
+  const appsContainer =
+    document.getElementById("apps-container");
 
-    <span>
-      Current projects
-    </span>
+  try {
 
-  </div>
+    const response = await fetch("apps.html", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        "Could not load apps.html (" +
+        response.status +
+        ")"
+      );
+    }
 
 
-  <div class="apps" id="apps-container">
+    const html = await response.text();
 
-    <div class="apps-loading">
-      Loading apps…
-    </div>
 
-  </div>
+    const parser = new DOMParser();
 
-</section>
+    const doc = parser.parseFromString(
+      html,
+      "text/html"
+    );
+
+
+    /*
+      Find the complete app grid from apps.html.
+
+      We try the main .apps container first,
+      then common fallback containers.
+    */
+
+    const sourceAppsContainer =
+      doc.querySelector(".apps") ||
+      doc.querySelector("#apps-container") ||
+      doc.querySelector("#apps");
+
+
+    if (!sourceAppsContainer) {
+
+      throw new Error(
+        "Could not find the apps container in apps.html."
+      );
+
+    }
+
+
+    /*
+      Get ALL app cards inside the source container.
+    */
+
+    let sourceApps =
+      Array.from(
+        sourceAppsContainer.querySelectorAll(".app")
+      );
+
+
+    /*
+      Fallback for cards using data-app.
+    */
+
+    if (!sourceApps.length) {
+
+      sourceApps =
+        Array.from(
+          sourceAppsContainer.querySelectorAll("[data-app]")
+        );
+
+    }
+
+
+    if (!sourceApps.length) {
+
+      throw new Error(
+        "No app cards were found inside the apps container."
+      );
+
+    }
+
+
+    /*
+      Clear the loading state.
+    */
+
+    appsContainer.innerHTML = "";
+
+
+    /*
+      Clone EVERY app card from apps.html.
+    */
+
+    sourceApps.forEach(function(app) {
+
+      const clone =
+        app.cloneNode(true);
+
+      /*
+        Remove IDs so cloned cards don't create
+        duplicate IDs on the homepage.
+      */
+
+      clone.removeAttribute("id");
+
+      appsContainer.appendChild(clone);
+
+    });
+
+
+  } catch (error) {
+
+    console.error(
+      "Studio Sunshine app fetch failed:",
+      error
+    );
+
+
+    appsContainer.innerHTML = `
+
+      <div class="apps-error">
+
+        Couldn't load the apps right now.
+        <br>
+
+        <a
+          href="apps.html"
+          style="font-weight:750;text-decoration:underline;"
+        >
+          View all apps →
+        </a>
+
+      </div>
+
+    `;
+
+  }
+
+})();
+
+</script>
 
 
 <!-- =========================
