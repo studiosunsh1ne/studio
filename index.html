@@ -12,7 +12,7 @@
   >
 
   <style>
-    
+
   :root {
     --yellow: #FFD84D;
     --yellow-soft: #FFF4BE;
@@ -501,11 +501,18 @@
       margin: 0 auto;
     }
 
+    /*
+      MOBILE HERO:
+      Keep "Small apps. Bright ideas." large,
+      centred and on ONE line, while scaling down
+      just enough for smaller screens.
+    */
+
     h1 {
       width: 100%;
-      font-size: 2rem;
+      font-size: clamp(1.55rem, 8.5vw, 3rem);
       line-height: 1;
-      letter-spacing: -.055em;
+      letter-spacing: -.06em;
       white-space: nowrap;
       text-align: center;
       margin-bottom: 25px;
@@ -556,6 +563,83 @@
       gap: 14px 20px;
     }
   }
+
+
+  /* =========================
+     VERY SMALL PHONES
+  ========================= */
+
+  @media (max-width: 380px) {
+
+    nav {
+      padding: 18px 16px;
+    }
+
+    .logo {
+      font-size: .9rem;
+    }
+
+    .nav-links {
+      gap: 8px;
+      font-size: .7rem;
+    }
+
+    .build-link {
+      padding: 6px 8px;
+    }
+
+    main {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .hero {
+      padding-top: 28px;
+    }
+
+    .eyebrow {
+      font-size: .55rem;
+      letter-spacing: .08em;
+      gap: 6px;
+    }
+
+    .hero-logo {
+      margin-bottom: 22px;
+    }
+
+    /*
+      Still large on very small screens,
+      but guaranteed to fit on one line.
+    */
+
+    h1 {
+      font-size: clamp(1.35rem, 8.2vw, 1.9rem);
+      letter-spacing: -.065em;
+      white-space: nowrap;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .featured-main {
+      padding: 25px;
+    }
+
+    .featured-side {
+      padding: 25px;
+    }
+
+    .featured h3 {
+      font-size: 2.8rem;
+    }
+
+    .app {
+      padding: 20px;
+    }
+
+  }
+
   </style>
 </head>
 
@@ -715,6 +799,7 @@
 
 <!-- =========================
      CURRENT PROJECTS
+     APP CARDS FETCHED FROM apps.html
 ========================= -->
 
 <section id="apps">
@@ -732,270 +817,11 @@
   </div>
 
 
-  <div class="apps">
+  <div class="apps" id="apps-container">
 
-
-<!-- STOKVEL BOSS -->
-
-<article class="app" id="stokvel-boss">
-
-  <div class="app-top">
-
-    <div class="app-icon">
-      👑
+    <div class="apps-loading">
+      Loading apps…
     </div>
-
-    <span class="status">
-      Live
-    </span>
-
-  </div>
-
-
-  <div>
-
-    <h3>
-      StokvelBoss
-    </h3>
-
-    <p>
-      Simple stokvel management for keeping members, contributions,
-      payouts and records organised — without spreadsheets, paperwork
-      or unnecessary complexity.
-    </p>
-
-
-    <a
-      href="https://studiosunsh1ne.github.io/stokvel-boss/"
-      class="app-link"
-      target="_blank"
-      rel="noopener"
-    >
-      Launch StokvelBoss →
-    </a>
-
-  </div>
-
-</article>
-
-
-    <!-- SIDE HUSTLA SA -->
-
-    <article class="app" id="side-hustla-sa">
-
-      <div class="app-top">
-
-        <div class="app-icon">
-          💡
-        </div>
-
-        <span class="status">
-          Coming Soon
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <h3>
-          Side Hustla SA
-        </h3>
-
-        <p>
-          A practical side-hustle idea generator built for South
-          Africans who want to turn their skills, interests and
-          available budget into something they can actually start.
-        </p>
-
-
-        <a
-          href="https://studiosunsh1ne.github.io/side-hustla-sa/"
-          class="app-link"
-          target="_blank"
-          rel="noopener"
-        >
-          Coming soon →
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- SPAZA STOCK -->
-
-    <article class="app" id="spaza-stock">
-
-      <div class="app-top">
-
-        <div class="app-icon">
-          📦
-        </div>
-
-        <span class="status">
-          Coming Soon
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <h3>
-          Spaza Stock
-        </h3>
-
-        <p>
-          Simple stock management designed around small local
-          shops — helping owners know what they have, what is
-          moving and what needs attention without unnecessary complexity.
-        </p>
-
-
-        <a
-          href="https://studiosunsh1ne.github.io/istolo/"
-          class="app-link"
-          target="_blank"
-          rel="noopener"
-        >
-          Open →
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- DOLLFIN -->
-
-    <article class="app" id="dollfin">
-
-      <div class="app-top">
-
-        <div class="app-icon">
-          💸
-        </div>
-
-        <span class="status">
-          Coming Soon
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <h3>
-          DollFin
-        </h3>
-
-        <p>
-          A soft-life financial planner that turns your lifestyle
-          goals into a number, a timeline and a plan for getting there.
-        </p>
-
-
-        <a
-          href="https://studiosunsh1ne.github.io/dollfin/"
-          class="app-link"
-          target="_blank"
-          rel="noopener"
-        >
-          Coming soon →
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- CLAPBACK AI -->
-
-    <article class="app" id="clapback-ai">
-
-      <div class="app-top">
-
-        <div class="app-icon">
-          💬
-        </div>
-
-        <span class="status">
-          Coming Soon
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <h3>
-          ClapbackAI
-        </h3>
-
-        <p>
-          An AI reply assistant for those moments when you know
-          exactly how you feel but absolutely do not know what
-          to text back.
-        </p>
-
-
-        <a
-          href="https://studiosunsh1ne.github.io/clapbackai/"
-          class="app-link"
-          target="_blank"
-          rel="noopener"
-        >
-          Coming soon →
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- BOOKER BEE -->
-
-    <article class="app" id="booker-bee-card">
-
-      <div class="app-top">
-
-        <div class="app-icon">
-          🐝
-        </div>
-
-        <span class="status live">
-          Live
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <h3>
-          Booker Bee
-        </h3>
-
-        <p>
-          Discover vendors, plan your event and connect with the
-          people who can bring it all together.
-        </p>
-
-
-        <a
-          href="https://studiosunsh1ne.github.io/bookerbee/"
-          class="app-link"
-          target="_blank"
-          rel="noopener"
-        >
-          Explore Booker Bee →
-        </a>
-
-      </div>
-
-    </article>
-
 
   </div>
 
@@ -1113,6 +939,143 @@
   </div>
 
 </footer>
+
+
+<!-- =========================
+     FETCH APP CARDS
+     SOURCE: apps.html
+========================= -->
+
+<script>
+
+(async function loadAppsFromAppsPage() {
+
+  const appsContainer =
+    document.getElementById("apps-container");
+
+  try {
+
+    const response = await fetch("apps.html", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        "Could not load apps.html (" +
+        response.status +
+        ")"
+      );
+    }
+
+
+    const html = await response.text();
+
+
+    const parser = new DOMParser();
+
+    const doc = parser.parseFromString(
+      html,
+      "text/html"
+    );
+
+
+    /*
+      Get the app cards directly from apps.html.
+      Nothing on the Featured Booker Bee section
+      is touched by this fetch.
+    */
+
+    let sourceApps =
+      Array.from(
+        doc.querySelectorAll(".app")
+      );
+
+
+    /*
+      Fallback for apps using data-app.
+    */
+
+    if (!sourceApps.length) {
+
+      sourceApps =
+        Array.from(
+          doc.querySelectorAll("[data-app]")
+        );
+
+    }
+
+
+    if (!sourceApps.length) {
+
+      throw new Error(
+        "No app cards were found in apps.html."
+      );
+
+    }
+
+
+    /*
+      Replace only the contents of
+      "From the studio".
+    */
+
+    appsContainer.innerHTML = "";
+
+
+    sourceApps.forEach(function(app) {
+
+      const clone =
+        app.cloneNode(true);
+
+      /*
+        Prevent duplicate IDs after cloning.
+        The cards keep their content, links,
+        icons, statuses and styling.
+      */
+
+      clone.removeAttribute("id");
+
+      appsContainer.appendChild(clone);
+
+    });
+
+
+  } catch (error) {
+
+    console.error(
+      "Studio Sunshine app fetch failed:",
+      error
+    );
+
+
+    /*
+      Keep the page usable if apps.html
+      cannot be loaded.
+    */
+
+    appsContainer.innerHTML = `
+
+      <div class="apps-error">
+
+        Couldn't load the apps right now.
+        <br>
+
+        <a
+          href="apps.html"
+          style="font-weight:750;text-decoration:underline;"
+        >
+          View all apps →
+        </a>
+
+      </div>
+
+    `;
+
+  }
+
+})();
+
+</script>
 
 
 </body>
