@@ -38,6 +38,7 @@
     background: var(--paper);
     color: var(--ink);
     line-height: 1.6;
+    overflow-x: hidden;
   }
 
   a {
@@ -365,6 +366,23 @@
     font-weight: 750;
   }
 
+  .apps-loading {
+    grid-column: 1 / -1;
+    color: var(--muted);
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .apps-error {
+    grid-column: 1 / -1;
+    color: var(--muted);
+    padding: 30px;
+    text-align: center;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+  }
+
 
   /* =========================
      STUDIO
@@ -501,13 +519,6 @@
       margin: 0 auto;
     }
 
-    /*
-      MOBILE HERO:
-      Keep "Small apps. Bright ideas." large,
-      centred and on ONE line, while scaling down
-      just enough for smaller screens.
-    */
-
     h1 {
       width: 100%;
       font-size: clamp(1.55rem, 8.5vw, 3rem);
@@ -541,6 +552,10 @@
 
     .apps {
       grid-template-columns: 1fr;
+    }
+
+    .app {
+      min-height: 250px;
     }
 
     .studio {
@@ -606,11 +621,6 @@
     .hero-logo {
       margin-bottom: 22px;
     }
-
-    /*
-      Still large on very small screens,
-      but guaranteed to fit on one line.
-    */
 
     h1 {
       font-size: clamp(1.35rem, 8.2vw, 1.9rem);
@@ -799,7 +809,36 @@
 
 <!-- =========================
      CURRENT PROJECTS
-     APP CARDS FETCHED FROM apps.html
+========================= -->
+
+<section id="apps">
+
+  <div class="section-heading">
+
+    <h2>
+      From the studio
+    </h2>
+
+    <span>
+      Current projects
+    </span>
+
+  </div>
+
+
+  <div class="apps" id="apps-container">
+
+    <div class="apps-loading">
+      Loading apps…
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FETCH APPS FROM apps.html
 ========================= -->
 
 <script>
@@ -826,7 +865,6 @@
 
     const html = await response.text();
 
-
     const parser = new DOMParser();
 
     const doc = parser.parseFromString(
@@ -836,69 +874,33 @@
 
 
     /*
-      Find the complete app grid from apps.html.
+      apps.html contains the master
+      .apps-grid with all app cards.
 
-      We try the main .apps container first,
-      then common fallback containers.
+      We intentionally fetch ONLY .app cards.
+      The Featured section above remains untouched.
     */
 
-    const sourceAppsContainer =
-      doc.querySelector(".apps") ||
-      doc.querySelector("#apps-container") ||
-      doc.querySelector("#apps");
-
-
-    if (!sourceAppsContainer) {
-
-      throw new Error(
-        "Could not find the apps container in apps.html."
-      );
-
-    }
-
-
-    /*
-      Get ALL app cards inside the source container.
-    */
-
-    let sourceApps =
+    const sourceApps =
       Array.from(
-        sourceAppsContainer.querySelectorAll(".app")
+        doc.querySelectorAll(".apps-grid .app")
       );
-
-
-    /*
-      Fallback for cards using data-app.
-    */
-
-    if (!sourceApps.length) {
-
-      sourceApps =
-        Array.from(
-          sourceAppsContainer.querySelectorAll("[data-app]")
-        );
-
-    }
 
 
     if (!sourceApps.length) {
 
       throw new Error(
-        "No app cards were found inside the apps container."
+        "No app cards were found inside apps.html."
       );
 
     }
 
-
-    /*
-      Clear the loading state.
-    */
 
     appsContainer.innerHTML = "";
 
 
     /*
-      Clone EVERY app card from apps.html.
+      Clone every app card.
     */
 
     sourceApps.forEach(function(app) {
@@ -907,8 +909,7 @@
         app.cloneNode(true);
 
       /*
-        Remove IDs so cloned cards don't create
-        duplicate IDs on the homepage.
+        Prevent duplicate IDs on the homepage.
       */
 
       clone.removeAttribute("id");
@@ -1062,143 +1063,6 @@
   </div>
 
 </footer>
-
-
-<!-- =========================
-     FETCH APP CARDS
-     SOURCE: apps.html
-========================= -->
-
-<script>
-
-(async function loadAppsFromAppsPage() {
-
-  const appsContainer =
-    document.getElementById("apps-container");
-
-  try {
-
-    const response = await fetch("apps.html", {
-      cache: "no-store"
-    });
-
-    if (!response.ok) {
-      throw new Error(
-        "Could not load apps.html (" +
-        response.status +
-        ")"
-      );
-    }
-
-
-    const html = await response.text();
-
-
-    const parser = new DOMParser();
-
-    const doc = parser.parseFromString(
-      html,
-      "text/html"
-    );
-
-
-    /*
-      Get the app cards directly from apps.html.
-      Nothing on the Featured Booker Bee section
-      is touched by this fetch.
-    */
-
-    let sourceApps =
-      Array.from(
-        doc.querySelectorAll(".app")
-      );
-
-
-    /*
-      Fallback for apps using data-app.
-    */
-
-    if (!sourceApps.length) {
-
-      sourceApps =
-        Array.from(
-          doc.querySelectorAll("[data-app]")
-        );
-
-    }
-
-
-    if (!sourceApps.length) {
-
-      throw new Error(
-        "No app cards were found in apps.html."
-      );
-
-    }
-
-
-    /*
-      Replace only the contents of
-      "From the studio".
-    */
-
-    appsContainer.innerHTML = "";
-
-
-    sourceApps.forEach(function(app) {
-
-      const clone =
-        app.cloneNode(true);
-
-      /*
-        Prevent duplicate IDs after cloning.
-        The cards keep their content, links,
-        icons, statuses and styling.
-      */
-
-      clone.removeAttribute("id");
-
-      appsContainer.appendChild(clone);
-
-    });
-
-
-  } catch (error) {
-
-    console.error(
-      "Studio Sunshine app fetch failed:",
-      error
-    );
-
-
-    /*
-      Keep the page usable if apps.html
-      cannot be loaded.
-    */
-
-    appsContainer.innerHTML = `
-
-      <div class="apps-error">
-
-        Couldn't load the apps right now.
-        <br>
-
-        <a
-          href="apps.html"
-          style="font-weight:750;text-decoration:underline;"
-        >
-          View all apps →
-        </a>
-
-      </div>
-
-    `;
-
-  }
-
-})();
-
-</script>
 
 
 </body>
