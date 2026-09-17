@@ -1,980 +1,1090 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Studio Sünshine ☀️ — Small Apps. Bright Ideas.</title><meta
-name="description"
-content="Studio Sünshine makes small, useful and occasionally ridiculous digital products for real life."
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-«»
+  <title>Studio Sünshine ☀️ — Small Apps. Bright Ideas.</title>
+
+  <meta
+    name="description"
+    content="Studio Sünshine makes small, useful and occasionally ridiculous digital products for real life."
+  >
 
   <style>
 
-  :root {
-    --yellow: #FFD84D;
-    --yellow-soft: #FFF4BE;
-    --ink: #161616;
-    --muted: #747474;
-    --paper: #FFFEF9;
-    --white: #FFFFFF;
-    --line: #E9E6DC;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  nav,
-  main,
-  footer {
-    max-width: 1120px;
-    margin: auto;
-  }
-
-
-  /* =========================
-     NAV
-  ========================= */
-
-  nav {
-    padding: 26px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    font-size: 1.05rem;
-    font-weight: 800;
-    letter-spacing: -.04em;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    font-size: .9rem;
-    font-weight: 650;
-  }
-
-  .nav-links a {
-    color: var(--muted);
-  }
-
-  .nav-links a:hover,
-  .nav-links .active {
-    color: var(--ink);
-  }
-
-  .build-link {
-    border: 1px solid var(--line);
-    background: var(--white);
-    padding: 8px 13px;
-    border-radius: 50px;
-  }
-
-
-  /* =========================
-     MAIN
-  ========================= */
-
-  main {
-    padding: 55px 24px 100px;
-  }
-
-
-  /* =========================
-     HERO
-  ========================= */
-
-  .hero {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 45px 0 105px;
-    text-align: center;
-  }
-
-  .eyebrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    font-size: .73rem;
-    font-weight: 800;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-  }
-
-  .sun {
-    width: 10px;
-    height: 10px;
-    background: var(--yellow);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .hero-logo {
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto 30px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .hero-logo img {
-    display: block;
-    width: 100%;
-    max-width: 850px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: clamp(1.8rem, 4vw, 3.5rem);
-    line-height: 1;
-    letter-spacing: -.06em;
-    margin-bottom: 28px;
-    white-space: nowrap;
-    text-align: center;
-  }
-
-  .hero p {
-    width: 100%;
-    max-width: 650px;
-    margin: 0 auto;
-    font-size: clamp(1.15rem, 2vw, 1.4rem);
-    color: var(--muted);
-    line-height: 1.5;
-    text-align: left;
-  }
-
-  .hero strong {
-    color: var(--ink);
-  }
-
-
-  /* =========================
-     SECTIONS
-  ========================= */
-
-  section {
-    border-top: 1px solid var(--line);
-    padding: 75px 0;
-  }
-
-  .section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 35px;
-  }
-
-  .section-heading h2 {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1;
-    letter-spacing: -.06em;
-  }
-
-  .section-heading span {
-    color: var(--muted);
-    font-size: .8rem;
-  }
-
-
-  /* =========================
-     APP GRID
-  ========================= */
-
-  .apps {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-
-  .app {
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    padding: 28px;
-    min-height: 270px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition:
-      transform .2s ease,
-      box-shadow .2s ease;
-  }
-
-  .app:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.06);
-  }
-
-  .app-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .app-icon {
-    width: 52px;
-    height: 52px;
-    display: grid;
-    place-items: center;
-    border-radius: 15px;
-    background: var(--yellow-soft);
-    font-size: 1.5rem;
-  }
-
-  .status {
-    font-size: .63rem;
-    font-weight: 800;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    padding: 7px 10px;
-    border-radius: 50px;
-    background: #f2f0e8;
-  }
-
-  .status.live {
-    background: var(--yellow-soft);
-  }
-
-  .status.building {
-    background: #f2f0e8;
-  }
-
-  .app h3 {
-    font-size: 1.65rem;
-    letter-spacing: -.05em;
-    margin-bottom: 7px;
-  }
-
-  .app p {
-    color: var(--muted);
-    font-size: .9rem;
-    max-width: 430px;
-  }
-
-  .app-link {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: .78rem;
-    font-weight: 750;
-  }
-
-  .app-link:hover {
-    text-decoration: underline;
-  }
-
-
-  /* =========================
-     STUDIO
-  ========================= */
-
-  .studio {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 80px;
-  }
-
-  .label {
-    font-size: .73rem;
-    font-weight: 800;
-    letter-spacing: .13em;
-    text-transform: uppercase;
-  }
-
-  .studio-copy {
-    max-width: 700px;
-  }
-
-  .studio-copy p {
-    color: var(--muted);
-    font-size: 1.08rem;
-    margin-bottom: 20px;
-  }
-
-  .studio-copy p:last-child {
-    margin-bottom: 0;
-  }
-
-  .studio-copy strong {
-    color: var(--ink);
-  }
-
-
-  /* =========================
-     BUILD SECTION
-  ========================= */
-
-  .build-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
-
-  .build-card {
-    background: var(--ink);
-    color: var(--white);
-    border-radius: 30px;
-    padding: 40px;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .build-card.yellow {
-    background: var(--yellow);
-    color: var(--ink);
-  }
-
-  .build-card .small-label {
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-  }
-
-  .build-card h3 {
-    font-size: clamp(2rem, 4vw, 3.4rem);
-    line-height: .95;
-    letter-spacing: -.06em;
-    margin-bottom: 15px;
-  }
-
-  .build-card p {
-    max-width: 450px;
-    color: #bcbcbc;
-  }
-
-  .build-card.yellow p {
-    color: var(--ink);
-  }
-
-  .build-button {
-    display: inline-flex;
-    width: fit-content;
-    padding: 11px 16px;
-    border-radius: 50px;
-    background: var(--white);
-    color: var(--ink);
-    font-size: .75rem;
-    font-weight: 750;
-    margin-top: 25px;
-  }
-
-  .build-card.yellow .build-button {
-    background: var(--ink);
-    color: var(--white);
-  }
-
-  .build-button:hover {
-    transform: translateY(-2px);
-  }
-
-
-  /* =========================
-     CTA
-  ========================= */
-
-  .cta {
-    background: var(--yellow);
-    border-radius: 30px;
-    padding: 65px 45px;
-    text-align: center;
-    border: none;
-  }
-
-  .cta h2 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: .9;
-    letter-spacing: -.07em;
-    margin-bottom: 20px;
-  }
-
-  .cta p {
-    max-width: 550px;
-    margin: auto;
-  }
-
-  .cta .button {
-    display: inline-flex;
-    width: fit-content;
-    padding: 11px 16px;
-    border-radius: 50px;
-    background: var(--ink);
-    color: var(--white);
-    font-size: .75rem;
-    font-weight: 750;
-    margin-top: 25px;
-  }
-
-  .cta .button:hover {
-    transform: translateY(-2px);
-  }
-
-
-  /* =========================
-     FOOTER
-  ========================= */
-
-  footer {
-    padding: 28px 24px 45px;
-    display: flex;
-    justify-content: space-between;
-    color: var(--muted);
-    font-size: .78rem;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 22px;
-  }
-
-  .footer-links a:hover {
-    color: var(--ink);
-  }
-
-
-  /* =========================
-     MOBILE
-  ========================= */
-
-  @media (max-width: 760px) {
-
-    nav {
-      padding: 22px 20px;
+    :root {
+      --yellow: #FFD84D;
+      --yellow-soft: #FFF4BE;
+      --ink: #161616;
+      --muted: #747474;
+      --paper: #FFFEF9;
+      --white: #FFFFFF;
+      --line: #E9E6DC;
     }
 
-    .nav-links {
-      gap: 12px;
-      font-size: .8rem;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .build-link {
-      padding: 7px 10px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    main {
-      padding: 35px 20px 70px;
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    .hero {
-      width: 100%;
-      max-width: 100%;
-      padding: 40px 0 70px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .eyebrow {
-      justify-content: center;
-      white-space: nowrap;
-      font-size: .68rem;
-      letter-spacing: .12em;
-    }
-
-    .hero-logo {
-      width: 100%;
-      max-width: 650px;
-      margin: 0 auto 25px;
-    }
-
-    .hero-logo img {
-      width: 100%;
-      max-width: 650px;
-    }
-
-    h1 {
-      width: 100%;
-      font-size: clamp(1.55rem, 8.5vw, 3rem);
-      line-height: 1;
-      letter-spacing: -.06em;
-      white-space: nowrap;
-      margin-bottom: 25px;
-    }
-
-    .hero p {
-      width: 100%;
-      max-width: 650px;
-      font-size: 1.15rem;
-      line-height: 1.5;
-    }
-
-    .apps {
-      grid-template-columns: 1fr;
-    }
-
-    .app {
-      min-height: 250px;
-    }
-
-    .studio {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-
-    .build-section {
-      grid-template-columns: 1fr;
-    }
-
-    .build-card {
-      min-height: 270px;
-    }
-
-    section {
-      padding: 55px 0;
-    }
-
+    nav,
+    main,
     footer {
-      padding: 25px 20px 35px;
-      flex-direction: column;
-      gap: 15px;
+      max-width: 1120px;
+      margin: auto;
     }
 
-    .footer-links {
-      flex-wrap: wrap;
-      gap: 14px 20px;
-    }
-  }
 
-
-  /* =========================
-     VERY SMALL PHONES
-  ========================= */
-
-  @media (max-width: 380px) {
+    /* =========================
+       NAV
+    ========================= */
 
     nav {
-      padding: 18px 16px;
+      padding: 26px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      font-size: .9rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
     }
 
     .nav-links {
-      gap: 8px;
-      font-size: .7rem;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--ink);
     }
 
     .build-link {
-      padding: 6px 8px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 8px 13px;
+      border-radius: 50px;
     }
+
+
+    /* =========================
+       MAIN
+    ========================= */
 
     main {
-      padding-left: 16px;
-      padding-right: 16px;
+      padding: 55px 24px 100px;
     }
 
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      padding-top: 28px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 45px 0 105px;
+      text-align: center;
     }
 
     .eyebrow {
-      font-size: .55rem;
-      letter-spacing: .08em;
-      gap: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .sun {
+      width: 10px;
+      height: 10px;
+      background: var(--yellow);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
     .hero-logo {
-      margin-bottom: 22px;
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-logo img {
+      display: block;
+      width: 100%;
+      max-width: 850px;
+      height: auto;
+      margin: 0 auto;
     }
 
     h1 {
-      font-size: clamp(1.35rem, 8.2vw, 1.9rem);
-      letter-spacing: -.065em;
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -.06em;
+      margin-bottom: 28px;
       white-space: nowrap;
+      text-align: center;
     }
 
     .hero p {
-      font-size: 1rem;
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      color: var(--muted);
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .hero strong {
+      color: var(--ink);
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      border-top: 1px solid var(--line);
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .section-heading span {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+
+    /* =========================
+       APP GRID
+    ========================= */
+
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
     }
 
     .app {
-      padding: 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .app:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.06);
+    }
+
+    .app-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .app-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--yellow-soft);
+      font-size: 1.5rem;
+    }
+
+    .status {
+      font-size: .63rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 7px 10px;
+      border-radius: 50px;
+      background: #f2f0e8;
+    }
+
+    .status.live {
+      background: var(--yellow-soft);
+    }
+
+    .status.building {
+      background: #f2f0e8;
+    }
+
+    .app h3 {
+      font-size: 1.65rem;
+      letter-spacing: -.05em;
+      margin-bottom: 7px;
+    }
+
+    .app p {
+      color: var(--muted);
+      font-size: .9rem;
+      max-width: 430px;
+    }
+
+    .app-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: .78rem;
+      font-weight: 750;
+    }
+
+    .app-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       STUDIO
+    ========================= */
+
+    .studio {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 80px;
+    }
+
+    .label {
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .studio-copy {
+      max-width: 700px;
+    }
+
+    .studio-copy p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 20px;
+    }
+
+    .studio-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .studio-copy strong {
+      color: var(--ink);
+    }
+
+
+    /* =========================
+       BUILD SECTION
+    ========================= */
+
+    .build-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
     .build-card {
-      padding: 28px;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 30px;
+      padding: 40px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
+
+    .build-card.yellow {
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    .build-card .small-label {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .build-card h3 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: .95;
+      letter-spacing: -.06em;
+      margin-bottom: 15px;
+    }
+
+    .build-card p {
+      max-width: 450px;
+      color: #bcbcbc;
+    }
+
+    .build-card.yellow p {
+      color: var(--ink);
+    }
+
+    .build-button {
+      display: inline-flex;
+      width: fit-content;
+      padding: 11px 16px;
+      border-radius: 50px;
+      background: var(--white);
+      color: var(--ink);
+      font-size: .75rem;
+      font-weight: 750;
+      margin-top: 25px;
+    }
+
+    .build-card.yellow .build-button {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .build-button:hover {
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
-      padding: 50px 25px;
+      background: var(--yellow);
+      border-radius: 30px;
+      padding: 65px 45px;
+      text-align: center;
+      border: none;
     }
 
-  }
+    .cta h2 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: .9;
+      letter-spacing: -.07em;
+      margin-bottom: 20px;
+    }
 
-  </style></head><body><!-- =========================
-     NAV
-========================= --><nav>  <a href="index.html" class="logo">
-    Studio Sünshine ☀️
-  </a>  <div class="nav-links"><a href="apps.html" class="active">
-  Apps
-</a>
+    .cta p {
+      max-width: 550px;
+      margin: auto;
+    }
 
-<a href="about.html">
-  About
-</a>
+    .cta .button {
+      display: inline-flex;
+      width: fit-content;
+      padding: 11px 16px;
+      border-radius: 50px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 750;
+      margin-top: 25px;
+    }
 
-<a href="howIBuild.html" class="build-link">
-  How I Build →
-</a>
+    .cta .button:hover {
+      transform: translateY(-2px);
+    }
 
-  </div></nav><main><!-- =========================
-     HERO
-========================= --><div class="hero">  <div class="eyebrow">
-    <span class="sun"></span>
-    Independent app studio · South Africa
-  </div>  <div class="hero-logo"><img
-  src="https://i.ibb.co/gZRqdk9K/file-00000000fbf081f48d73e2e09322299e.png"
-  alt="Studio Sünshine logo"
->
 
-  </div>  <h1>
-    Small apps. Bright ideas.
-  </h1>  <p>
-    Studio Sünshine makes
-    <strong>small, useful and occasionally ridiculous digital products</strong>
-    for real life — from saving money and finding things to do,
-    to keeping your stock straight and stress-testing your next app idea.
-  </p></div><!-- =========================
-     LATEST
-========================= --><section id="apps">  <div class="section-heading"><h2>
-  Latest from the studio
-</h2>
+    /* =========================
+       FOOTER
+    ========================= */
 
-<span>
-  Four little apps
-</span>
+    footer {
+      padding: 28px 24px 45px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: .78rem;
+    }
 
-  </div>  <div class="apps"><!-- SOLO DATES -->
+    .footer-links {
+      display: flex;
+      gap: 22px;
+    }
 
-<article class="app">
+    .footer-links a:hover {
+      color: var(--ink);
+    }
 
-  <div class="app-top">
 
-    <div class="app-icon">
-      💌
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 760px) {
+
+      nav {
+        padding: 22px 20px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: .8rem;
+      }
+
+      .build-link {
+        padding: 7px 10px;
+      }
+
+      main {
+        padding: 35px 20px 70px;
+      }
+
+      .hero {
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 0 70px;
+      }
+
+      .eyebrow {
+        justify-content: center;
+        white-space: nowrap;
+        font-size: .68rem;
+        letter-spacing: .12em;
+      }
+
+      .hero-logo {
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto 25px;
+      }
+
+      .hero-logo img {
+        width: 100%;
+        max-width: 650px;
+      }
+
+      h1 {
+        width: 100%;
+        font-size: clamp(1.55rem, 8.5vw, 3rem);
+        line-height: 1;
+        letter-spacing: -.06em;
+        white-space: nowrap;
+        margin-bottom: 25px;
+      }
+
+      .hero p {
+        width: 100%;
+        max-width: 650px;
+        font-size: 1.15rem;
+        line-height: 1.5;
+      }
+
+      .apps {
+        grid-template-columns: 1fr;
+      }
+
+      .app {
+        min-height: 250px;
+      }
+
+      .studio {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .build-section {
+        grid-template-columns: 1fr;
+      }
+
+      .build-card {
+        min-height: 270px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      footer {
+        padding: 25px 20px 35px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 14px 20px;
+      }
+    }
+
+
+    /* =========================
+       VERY SMALL PHONES
+    ========================= */
+
+    @media (max-width: 380px) {
+
+      nav {
+        padding: 18px 16px;
+      }
+
+      .logo {
+        font-size: .9rem;
+      }
+
+      .nav-links {
+        gap: 8px;
+        font-size: .7rem;
+      }
+
+      .build-link {
+        padding: 6px 8px;
+      }
+
+      main {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+
+      .eyebrow {
+        font-size: .55rem;
+        letter-spacing: .08em;
+        gap: 6px;
+      }
+
+      .hero-logo {
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: clamp(1.35rem, 8.2vw, 1.9rem);
+        letter-spacing: -.065em;
+        white-space: nowrap;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .app {
+        padding: 22px;
+      }
+
+      .build-card {
+        padding: 28px;
+      }
+
+      .cta {
+        padding: 50px 25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAV
+  ========================= -->
+
+  <nav>
+
+    <a href="index.html" class="logo">
+      Studio Sünshine ☀️
+    </a>
+
+    <div class="nav-links">
+
+      <a href="apps.html" class="active">
+        Apps
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="howIBuild.html" class="build-link">
+        How I Build →
+      </a>
+
     </div>
 
-    <span class="status live">
-      Live
-    </span>
-
-  </div>
+  </nav>
 
 
-  <div>
+  <main>
 
-    <h3>
-      Solo Dates
-    </h3>
+    <!-- =========================
+         HERO
+    ========================= -->
 
-    <p>
-      A cute little guide to finding things to do,
-      places to go and ways to enjoy your own company.
-    </p>
+    <div class="hero">
 
-    <a
-      href="https://solodates.netlify.app"
-      class="app-link"
-      target="_blank"
-      rel="noopener"
-    >
-      Explore Solo Dates →
-    </a>
+      <div class="eyebrow">
+        <span class="sun"></span>
+        Independent app studio · South Africa
+      </div>
 
-  </div>
+      <div class="hero-logo">
 
-</article>
+        <img
+          src="https://i.ibb.co/gZRqdk9K/file-00000000fbf081f48d73e2e09322299e.png"
+          alt="Studio Sünshine logo"
+        >
 
+      </div>
 
-<!-- PIGGY BANK -->
+      <h1>
+        Small apps. Bright ideas.
+      </h1>
 
-<article class="app">
+      <p>
+        Studio Sünshine makes
+        <strong>small, useful and occasionally ridiculous digital products</strong>
+        for real life — from saving money and finding things to do,
+        to keeping your stock straight and stress-testing your next app idea.
+      </p>
 
-  <div class="app-top">
-
-    <div class="app-icon">
-      🐷
     </div>
 
-    <span class="status live">
-      Live
-    </span>
 
-  </div>
+    <!-- =========================
+         LATEST
+    ========================= -->
 
+    <section id="apps">
 
-  <div>
+      <div class="section-heading">
 
-    <h3>
-      Piggy Bank
-    </h3>
+        <h2>
+          Latest from the studio
+        </h2>
 
-    <p>
-      A simple, cute savings tracker for turning
-      little contributions into bigger goals.
-    </p>
+        <span>
+          Four little apps
+        </span>
 
-    <a
-      href="#"
-      class="app-link"
-    >
-      Open Piggy Bank →
-    </a>
-
-  </div>
-
-</article>
+      </div>
 
 
-<!-- BUILDCHECK -->
+      <div class="apps">
 
-<article class="app">
 
-  <div class="app-top">
+        <!-- SOLO DATES -->
 
-    <div class="app-icon">
-      🧪
+        <article class="app">
+
+          <div class="app-top">
+
+            <div class="app-icon">
+              💌
+            </div>
+
+            <span class="status live">
+              Live
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <h3>
+              Solo Dates
+            </h3>
+
+            <p>
+              A cute little guide to finding things to do,
+              places to go and ways to enjoy your own company.
+            </p>
+
+            <a
+              href="https://solodates.netlify.app"
+              class="app-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Explore Solo Dates →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PIGGY BANK -->
+
+        <article class="app">
+
+          <div class="app-top">
+
+            <div class="app-icon">
+              🐷
+            </div>
+
+            <span class="status live">
+              Live
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <h3>
+              Piggy Bank
+            </h3>
+
+            <p>
+              A simple, cute savings tracker for turning
+              little contributions into bigger goals.
+            </p>
+
+            <a
+              href="#"
+              class="app-link"
+            >
+              Open Piggy Bank →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- BUILDCHECK -->
+
+        <article class="app">
+
+          <div class="app-top">
+
+            <div class="app-icon">
+              🧪
+            </div>
+
+            <span class="status live">
+              Live
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <h3>
+              BuildCheck
+            </h3>
+
+            <p>
+              Stress-test your app idea before you spend
+              your time and money building it.
+            </p>
+
+            <a
+              href="#"
+              class="app-link"
+            >
+              Try BuildCheck →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ISTOLO -->
+
+        <article class="app">
+
+          <div class="app-top">
+
+            <div class="app-icon">
+              🛒
+            </div>
+
+            <span class="status live">
+              Live
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <h3>
+              iStolo
+            </h3>
+
+            <p>
+              Simple offline stock and sales tracking
+              for small shops and spaza businesses.
+            </p>
+
+            <a
+              href="#"
+              class="app-link"
+            >
+              Open iStolo →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         THE STUDIO
+    ========================= -->
+
+    <section>
+
+      <div class="studio">
+
+        <div class="label">
+          The studio
+        </div>
+
+
+        <div class="studio-copy">
+
+          <p>
+            Studio Sünshine is a tiny independent app studio
+            built around a simple idea:
+            <strong>if something feels like it should be easier,
+            maybe it needs an app.</strong>
+          </p>
+
+
+          <p>
+            I like making small products that solve small problems.
+            Sometimes they're practical. Sometimes they're playful.
+            Sometimes they're both.
+          </p>
+
+
+          <p>
+            I build from South Africa, mostly with AI,
+            a lot of curiosity and an unreasonable number of ideas.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BUILD / AI
+    ========================= -->
+
+    <section>
+
+      <div class="section-heading">
+
+        <h2>
+          Behind the builds
+        </h2>
+
+        <span>
+          Build · Test · Learn
+        </span>
+
+      </div>
+
+
+      <div class="build-section">
+
+
+        <div class="build-card">
+
+          <div class="small-label">
+            How I Build
+          </div>
+
+
+          <div>
+
+            <h3>
+              AI changed<br>
+              how I make things.
+            </h3>
+
+            <p>
+              Come see the tools, experiments and slightly chaotic
+              process behind the products.
+            </p>
+
+
+            <a
+              href="howIBuild.html"
+              class="build-button"
+            >
+              How I Build →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="build-card yellow">
+
+          <div class="small-label">
+            BuildCheck
+          </div>
+
+
+          <div>
+
+            <h3>
+              Not every<br>
+              idea needs an app.
+            </h3>
+
+            <p>
+              That's why I built something to help founders
+              stress-test the idea before they build it.
+            </p>
+
+
+            <a
+              href="#"
+              class="build-button"
+            >
+              Stress-test an idea →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================= -->
+
+    <section class="cta">
+
+      <h2>
+        Got a tiny<br>
+        problem?
+      </h2>
+
+      <p>
+        It might deserve a tiny app.
+      </p>
+
+      <a
+        href="about.html"
+        class="button"
+      >
+        Meet the studio →
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div>
+      Studio Sünshine © 2026
     </div>
 
-    <span class="status live">
-      Live
-    </span>
+    <div class="footer-links">
 
-  </div>
+      <a href="index.html">
+        Home
+      </a>
 
+      <a href="apps.html">
+        Apps
+      </a>
 
-  <div>
+      <a href="about.html">
+        About
+      </a>
 
-    <h3>
-      BuildCheck
-    </h3>
+      <a href="howIBuild.html">
+        How I Build
+      </a>
 
-    <p>
-      Stress-test your app idea before you spend
-      your time and money building it.
-    </p>
+      <a
+        href="https://github.com/studiosunsh1ne"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </a>
 
-    <a
-      href="#"
-      class="app-link"
-    >
-      Try BuildCheck →
-    </a>
-
-  </div>
-
-</article>
-
-
-<!-- ISTOLO -->
-
-<article class="app">
-
-  <div class="app-top">
-
-    <div class="app-icon">
-      🛒
     </div>
 
-    <span class="status live">
-      Live
-    </span>
+  </footer>
 
-  </div>
-
-
-  <div>
-
-    <h3>
-      iStolo
-    </h3>
-
-    <p>
-      Simple offline stock and sales tracking
-      for small shops and spaza businesses.
-    </p>
-
-    <a
-      href="#"
-      class="app-link"
-    >
-      Open iStolo →
-    </a>
-
-  </div>
-
-</article>
-
-  </div></section><!-- =========================
-     THE STUDIO
-========================= --><section>  <div class="studio"><div class="label">
-  The studio
-</div>
-
-
-<div class="studio-copy">
-
-  <p>
-    Studio Sünshine is a tiny independent app studio
-    built around a simple idea:
-    <strong>if something feels like it should be easier,
-    maybe it needs an app.</strong>
-  </p>
-
-
-  <p>
-    I like making small products that solve small problems.
-    Sometimes they're practical. Sometimes they're playful.
-    Sometimes they're both.
-  </p>
-
-
-  <p>
-    I build from South Africa, mostly with AI,
-    a lot of curiosity and an unreasonable number of ideas.
-  </p>
-
-</div>
-
-  </div></section><!-- =========================
-     BUILD / AI
-========================= --><section>  <div class="section-heading"><h2>
-  Behind the builds
-</h2>
-
-<span>
-  Build · Test · Learn
-</span>
-
-  </div>  <div class="build-section"><div class="build-card">
-
-  <div class="small-label">
-    How I Build
-  </div>
-
-
-  <div>
-
-    <h3>
-      AI changed<br>
-      how I make things.
-    </h3>
-
-    <p>
-      Come see the tools, experiments and slightly chaotic
-      process behind the products.
-    </p>
-
-
-    <a
-      href="howIBuild.html"
-      class="build-button"
-    >
-      How I Build →
-    </a>
-
-  </div>
-
-</div>
-
-
-<div class="build-card yellow">
-
-  <div class="small-label">
-    BuildCheck
-  </div>
-
-
-  <div>
-
-    <h3>
-      Not every<br>
-      idea needs an app.
-    </h3>
-
-    <p>
-      That's why I built something to help founders
-      stress-test the idea before they build it.
-    </p>
-
-
-    <a
-      href="#"
-      class="build-button"
-    >
-      Stress-test an idea →
-    </a>
-
-  </div>
-
-</div>
-
-  </div></section><!-- =========================
-     CTA
-========================= --><section class="cta">  <h2>
-    Got a tiny<br>
-    problem?
-  </h2>  <p>
-    It might deserve a tiny app.
-  </p><a
-href="about.html"
-class="button"
-
-«»
-
-Meet the studio →
-
-  </a></section></main><!-- =========================
-     FOOTER
-========================= --><footer>  <div>
-    Studio Sünshine © 2026
-  </div>  <div class="footer-links"><a href="index.html">
-  Home
-</a>
-
-<a href="apps.html">
-  Apps
-</a>
-
-<a href="about.html">
-  About
-</a>
-
-<a href="howIBuild.html">
-  How I Build
-</a>
-
-<a
-  href="https://github.com/studiosunsh1ne"
-  target="_blank"
-  rel="noopener"
->
-  GitHub
-</a>
-
-  </div></footer></body>
+</body>
 </html>
