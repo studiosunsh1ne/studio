@@ -1096,57 +1096,100 @@
 
   <footer>
 
-    <div>
-      Studio Sünshine © 2026
-    </div>
+  <div class="social-links">
 
-    <div class="footer-links">
+    <a
+      href="YOUR-LINKEDIN-URL-HERE"
+      class="social-icon"
+      aria-label="LinkedIn"
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
 
-      <a href="index.html">
-        Home
-      </a>
+    <a
+      href="YOUR-TIKTOK-URL-HERE"
+      class="social-icon"
+      aria-label="TikTok"
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
 
-      <a href="apps.html">
-        Apps
-      </a>
+  </div>
 
-      <a href="about.html">
-        About
-      </a>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="apps.html">Apps</a>
+    <a href="about.html">About</a>
+    <a href="howIBuild.html">How I Build</a>
+  </div>
 
-      <a href="howIBuild.html">
-        How I Build
-      </a>
+  <p>Built by Studio Sünshine © 2026</p>
 
-      <!-- SOCIALS -->
+</footer>
 
-      <div class="social-links">
+And make sure your footer CSS is:
 
-        <a
-          href="YOUR-LINKEDIN-URL-HERE"
-          class="social-icon"
-          target="_blank"
-          rel="noopener"
-          aria-label="Studio Sünshine on LinkedIn"
-        >
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+footer {
+  text-align: center;
+  padding: 48px 20px 32px;
+}
 
-        <a
-          href="YOUR-TIKTOK-URL-HERE"
-          class="social-icon"
-          target="_blank"
-          rel="noopener"
-          aria-label="Studio Sünshine on TikTok"
-        >
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
 
-      </div>
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
 
-    </div>
+.social-icon:hover {
+  background: var(--yellow-soft);
+  transform: translateY(-3px);
+}
 
-  </footer>
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.footer-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
 
 
 </body>
