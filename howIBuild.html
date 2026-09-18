@@ -1,405 +1,444 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>About — Studio Sünshine ☀️</title><meta
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>How I Build — Studio Sünshine ☀️</title><meta
 name="description"
-content="About Studio Sünshine — a tiny independent app studio making small, useful digital products from South Africa."
+content="How Studio Sünshine turns ideas into small digital products using AI, rapid building, testing and iteration."
 
 «»
 
   <style>
 
-  :root {
-    --yellow: #FFD84D;
-    --yellow-soft: #FFF4BE;
-    --ink: #161616;
-    --muted: #747474;
-    --paper: #FFFEF9;
-    --white: #FFFFFF;
-    --line: #E9E6DC;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.6;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  nav,
-  main,
-  footer {
-    max-width: 1120px;
-    margin: auto;
-  }
-
-
-  /* =========================
-     NAV
-  ========================= */
-
-  nav {
-    padding: 26px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    font-size: 1.05rem;
-    font-weight: 800;
-    letter-spacing: -.04em;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    font-size: .9rem;
-    font-weight: 650;
-  }
-
-  .nav-links a {
-    color: var(--muted);
-  }
-
-  .nav-links a:hover,
-  .nav-links .active {
-    color: var(--ink);
-  }
-
-  .build-link {
-    border: 1px solid var(--line);
-    background: var(--white);
-    padding: 8px 13px;
-    border-radius: 50px;
-  }
-
-
-  /* =========================
-     MAIN
-  ========================= */
-
-  main {
-    padding: 55px 24px 100px;
-  }
-
-
-  /* =========================
-     HERO
-  ========================= */
-
-  .hero {
-    max-width: 900px;
-    padding: 45px 0 105px;
-  }
-
-  .eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    font-size: .73rem;
-    font-weight: 800;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-  }
-
-  .sun {
-    width: 10px;
-    height: 10px;
-    background: var(--yellow);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  h1 {
-    font-size: clamp(3.8rem, 9vw, 8rem);
-    line-height: .85;
-    letter-spacing: -.08em;
-    margin-bottom: 35px;
-  }
-
-  .hero p {
-    color: var(--muted);
-    font-size: clamp(1.15rem, 2vw, 1.4rem);
-    max-width: 720px;
-  }
-
-  .hero strong {
-    color: var(--ink);
-  }
-
-
-  /* =========================
-     SECTIONS
-  ========================= */
-
-  section {
-    border-top: 1px solid var(--line);
-    padding: 75px 0;
-  }
-
-  .section-grid {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 80px;
-  }
-
-  .label {
-    font-size: .73rem;
-    font-weight: 800;
-    letter-spacing: .13em;
-    text-transform: uppercase;
-  }
-
-
-  /* =========================
-     STORY
-  ========================= */
-
-  .story {
-    max-width: 700px;
-  }
-
-  .story p {
-    color: var(--muted);
-    font-size: 1.08rem;
-    margin-bottom: 22px;
-  }
-
-  .story p:last-child {
-    margin-bottom: 0;
-  }
-
-  .story strong {
-    color: var(--ink);
-  }
-
-
-  /* =========================
-     WHY
-  ========================= */
-
-  .why {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-
-  .why-card {
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    padding: 32px;
-    min-height: 230px;
-  }
-
-  .why-icon {
-    font-size: 1.8rem;
-    margin-bottom: 35px;
-  }
-
-  .why-card h2 {
-    font-size: 1.45rem;
-    letter-spacing: -.04em;
-    margin-bottom: 8px;
-  }
-
-  .why-card p {
-    color: var(--muted);
-    font-size: .92rem;
-  }
-
-
-  /* =========================
-     PERSON
-  ========================= */
-
-  .person {
-    background: var(--ink);
-    color: var(--white);
-    border-radius: 30px;
-    padding: 55px 50px;
-  }
-
-  .person-label {
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-  }
-
-  .person h2 {
-    font-size: clamp(2.4rem, 5vw, 4.5rem);
-    line-height: .92;
-    letter-spacing: -.07em;
-    max-width: 750px;
-    margin-bottom: 28px;
-  }
-
-  .person p {
-    color: #bcbcbc;
-    max-width: 680px;
-    font-size: 1rem;
-  }
-
-  .person strong {
-    color: var(--white);
-  }
-
-
-  /* =========================
-     PHILOSOPHY
-  ========================= */
-
-  .philosophy {
-    background: var(--yellow);
-    border-radius: 30px;
-    padding: 60px 50px;
-  }
-
-  .philosophy h2 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: .9;
-    letter-spacing: -.07em;
-    margin-bottom: 25px;
-  }
-
-  .philosophy p {
-    max-width: 650px;
-    font-size: 1rem;
-  }
-
-
-  /* =========================
-     CTA
-  ========================= */
-
-  .cta {
-    text-align: center;
-  }
-
-  .cta p {
-    color: var(--muted);
-    margin-bottom: 20px;
-  }
-
-  .button {
-    display: inline-flex;
-    padding: 12px 18px;
-    border-radius: 50px;
-    background: var(--ink);
-    color: var(--white);
-    font-size: .78rem;
-    font-weight: 750;
-  }
-
-  .button:hover {
-    transform: translateY(-2px);
-  }
-
-
-  /* =========================
-     FOOTER
-  ========================= */
-
-  footer {
-    padding: 28px 24px 45px;
-    display: flex;
-    justify-content: space-between;
-    color: var(--muted);
-    font-size: .78rem;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 22px;
-  }
-
-  .footer-links a:hover {
-    color: var(--ink);
-  }
-
-
-  /* =========================
-     MOBILE
-  ========================= */
-
-  @media (max-width: 760px) {
+    :root {
+      --yellow: #FFD84D;
+      --yellow-soft: #FFF4BE;
+      --ink: #161616;
+      --muted: #747474;
+      --paper: #FFFEF9;
+      --white: #FFFFFF;
+      --line: #E9E6DC;
+      --soft: #F6F4ED;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav,
+    main,
+    footer {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+
+    /* =========================
+       NAV
+    ========================= */
 
     nav {
-      padding: 22px 20px;
+      padding: 26px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
     }
 
     .nav-links {
-      gap: 12px;
-      font-size: .8rem;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--ink);
     }
 
     .build-link {
-      padding: 7px 10px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 8px 13px;
+      border-radius: 50px;
     }
+
+
+    /* =========================
+       MAIN
+    ========================= */
 
     main {
-      padding: 35px 20px 70px;
+      padding: 55px 24px 100px;
     }
 
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      padding: 40px 0 70px;
+      max-width: 900px;
+      padding: 45px 0 100px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .sun {
+      width: 10px;
+      height: 10px;
+      background: var(--yellow);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: clamp(3.8rem, 9vw, 8rem);
+      line-height: .84;
+      letter-spacing: -.08em;
+      margin-bottom: 35px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      line-height: 1.5;
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      border-top: 1px solid var(--line);
+      padding: 75px 0;
     }
 
     .section-grid {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 80px;
+    }
+
+    .label {
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       MANIFESTO
+    ========================= */
+
+    .manifesto {
+      max-width: 720px;
+    }
+
+    .manifesto h2 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: .95;
+      letter-spacing: -.07em;
+      margin-bottom: 30px;
+    }
+
+    .manifesto p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+    }
+
+    .manifesto p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .step {
+      background: var(--white);
+      padding: 35px;
+      display: grid;
+      grid-template-columns: 60px 1fr;
       gap: 25px;
     }
 
-    section {
-      padding: 55px 0;
+    .number {
+      font-size: .72rem;
+      font-weight: 800;
+      color: var(--muted);
+      padding-top: 5px;
     }
 
-    .why {
-      grid-template-columns: 1fr;
+    .step h2 {
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -.05em;
+      margin-bottom: 10px;
     }
 
-    .why-card {
-      min-height: 210px;
+    .step p {
+      color: var(--muted);
+      max-width: 580px;
     }
 
-    .person,
-    .philosophy {
-      padding: 45px 25px;
-      border-radius: 24px;
+
+    /* =========================
+       AI SECTION
+    ========================= */
+
+    .ai-block {
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 30px;
+      padding: 60px 50px;
     }
+
+    .ai-block h2 {
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: .92;
+      letter-spacing: -.07em;
+      max-width: 700px;
+      margin-bottom: 25px;
+    }
+
+    .ai-block p {
+      color: #bcbcbc;
+      max-width: 680px;
+      font-size: 1.05rem;
+    }
+
+    .ai-highlight {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--yellow);
+      color: var(--ink);
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+
+    /* =========================
+       PRINCIPLES
+    ========================= */
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .principle {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 30px;
+      min-height: 230px;
+    }
+
+    .principle-icon {
+      font-size: 1.7rem;
+      margin-bottom: 30px;
+    }
+
+    .principle h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .principle p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+
+    /* =========================
+       REALITY
+    ========================= */
+
+    .reality {
+      background: var(--yellow);
+      border-radius: 30px;
+      padding: 60px 50px;
+    }
+
+    .reality h2 {
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: .92;
+      letter-spacing: -.07em;
+      margin-bottom: 25px;
+    }
+
+    .reality p {
+      max-width: 680px;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      background: var(--ink);
+      color: var(--white);
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 750;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      padding: 25px 20px 35px;
-      flex-direction: column;
-      gap: 15px;
+      padding: 28px 24px 45px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: .78rem;
     }
 
     .footer-links {
-      flex-wrap: wrap;
-      gap: 14px 20px;
+      display: flex;
+      gap: 22px;
     }
 
-  }
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 760px) {
+
+      nav {
+        padding: 22px 20px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: .8rem;
+      }
+
+      .build-link {
+        padding: 7px 10px;
+      }
+
+      main {
+        padding: 35px 20px 70px;
+      }
+
+      .hero {
+        padding: 40px 0 70px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .step {
+        grid-template-columns: 40px 1fr;
+        padding: 25px;
+        gap: 15px;
+      }
+
+      .ai-block,
+      .reality {
+        padding: 45px 25px;
+        border-radius: 24px;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 25px 20px 35px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 14px 20px;
+      }
+
+    }
 
   </style></head><body><!-- =========================
      NAV
@@ -409,11 +448,11 @@ content="About Studio Sünshine — a tiny independent app studio making small, 
   Apps
 </a>
 
-<a href="about.html" class="active">
+<a href="about.html">
   About
 </a>
 
-<a href="howIBuild.html" class="build-link">
+<a href="howIBuild.html" class="build-link active">
   How I Build →
 </a>
 
@@ -421,128 +460,280 @@ content="About Studio Sünshine — a tiny independent app studio making small, 
      HERO
 ========================= --><div class="hero">  <div class="eyebrow">
     <span class="sun"></span>
-    About the studio
+    Behind the builds
   </div>  <h1>
-    Why this<br>
-    exists.
+    How I<br>
+    build things.
   </h1>  <p>
-    Studio Sünshine is a tiny independent app studio
-    making <strong>small digital products for real life.</strong>
+    AI changed how quickly I can turn an idea into software.
+    So my process isn't about spending months building first.
+    It's about deciding what deserves to be built, building small,
+    testing early and learning from what happens.
   </p></div><!-- =========================
-     STORY
+     MANIFESTO
 ========================= --><section>  <div class="section-grid"><div class="label">
-  The story
+  The idea
 </div>
 
 
-<div class="story">
+<div class="manifesto">
+
+  <h2>
+    AI made building easier.
+    It didn't make choosing
+    what to build easier.
+  </h2>
+
 
   <p>
-    Studio Sünshine started with a simple obsession:
-    <strong>making things easier with technology.</strong>
+    That's the interesting part.
   </p>
 
 
   <p>
-    Not necessarily huge things. Sometimes it's a business
-    that needs a better way to keep track of stock.
-    Sometimes it's someone trying to save money.
-    Sometimes it's a person looking for something fun to do.
-    Sometimes it's a founder wondering whether their app idea
-    is actually worth building.
+    When software becomes cheaper and faster to make,
+    the bottleneck moves upstream. The question becomes:
+    <strong>is this actually worth building?</strong>
   </p>
 
 
   <p>
-    Those little problems are interesting to me.
-    They're where technology stops being impressive
-    and starts being useful.
-  </p>
-
-
-  <p>
-    So I started building.
+    That's why I care about small products, quick experiments
+    and putting things in front of real people instead of
+    trying to predict everything from a laptop.
   </p>
 
 </div>
 
   </div></section><!-- =========================
-     WHY SMALL
+     PROCESS
 ========================= --><section>  <div class="section-grid"><div class="label">
-  Why small?
+  The loop
 </div>
 
 
-<div class="why">
+<div class="process">
 
 
-  <div class="why-card">
+  <div class="step">
 
-    <div class="why-icon">
-      🧩
+    <div class="number">
+      01
     </div>
 
-    <h2>
-      Small problems matter.
-    </h2>
+    <div>
+
+      <h2>
+        Question
+      </h2>
+
+      <p>
+        Something feels unnecessarily difficult, someone has
+        a problem, or an idea keeps coming back. Before writing
+        code, I try to understand the actual problem.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">
+      02
+    </div>
+
+    <div>
+
+      <h2>
+        Stress-test
+      </h2>
+
+      <p>
+        Is this a real problem? Who has it? How are they solving
+        it now? Does an app actually make sense? This is where
+        an idea earns the right to become a build.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">
+      03
+    </div>
+
+    <div>
+
+      <h2>
+        Build small
+      </h2>
+
+      <p>
+        I build the smallest useful version I can. Not every
+        feature. Not every edge case. Just enough product to
+        make the idea real and testable.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">
+      04
+    </div>
+
+    <div>
+
+      <h2>
+        Test
+      </h2>
+
+      <p>
+        Then I try to break it. I test the flows, look for
+        confusing moments, check the experience on mobile and
+        pay attention to what doesn't work the way it should.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">
+      05
+    </div>
+
+    <div>
+
+      <h2>
+        Ship
+      </h2>
+
+      <p>
+        If it's useful enough to put into the world, I launch it.
+        A live product creates better feedback than a perfect
+        product sitting in development.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">
+      06
+    </div>
+
+    <div>
+
+      <h2>
+        Learn
+      </h2>
+
+      <p>
+        What people click, ignore, ask for, struggle with or
+        actually use becomes the next piece of information.
+        Then the loop starts again.
+      </p>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+  </div></section><!-- =========================
+     AI
+========================= --><section>  <div class="ai-block"><h2>
+  AI is part of my
+  building stack.
+</h2>
+
+
+<p>
+  I use AI to move faster — from thinking through product ideas
+  and generating code to debugging, writing copy, exploring
+  interfaces and working through problems. But AI doesn't decide
+  whether something deserves to exist. That's still the human part.
+</p>
+
+
+<span class="ai-highlight">
+  Build faster. Think harder.
+</span>
+
+  </div></section><!-- =========================
+     PRINCIPLES
+========================= --><section>  <div class="section-grid"><div class="label">
+  Rules I like
+</div>
+
+
+<div class="principles">
+
+
+  <div class="principle">
+
+    <div class="principle-icon">
+      🪶
+    </div>
+
+    <h3>
+      Small beats bloated.
+    </h3>
 
     <p>
-      Not every problem needs a giant platform.
-      Sometimes a focused little tool is exactly enough.
+      I would rather build one useful thing properly than
+      bury a simple problem under twenty unnecessary features.
     </p>
 
   </div>
 
 
-  <div class="why-card">
+  <div class="principle">
 
-    <div class="why-icon">
-      ⚡
-    </div>
-
-    <h2>
-      Small means movement.
-    </h2>
-
-    <p>
-      Smaller products can be built, tested, changed
-      and shipped without months of planning.
-    </p>
-
-  </div>
-
-
-  <div class="why-card">
-
-    <div class="why-icon">
+    <div class="principle-icon">
       🧪
     </div>
 
-    <h2>
-      Small makes experiments possible.
-    </h2>
+    <h3>
+      Test before guessing.
+    </h3>
 
     <p>
-      I can try an idea, put it into the world
-      and find out what happens instead of guessing forever.
+      Real usage is more useful than endlessly imagining
+      what people might want.
     </p>
 
   </div>
 
 
-  <div class="why-card">
+  <div class="principle">
 
-    <div class="why-icon">
-      ☀️
+    <div class="principle-icon">
+      🔁
     </div>
 
-    <h2>
-      Small can still be delightful.
-    </h2>
+    <h3>
+      Shipping starts the learning.
+    </h3>
 
     <p>
-      Useful doesn't have to mean boring.
-      I like products that do their job and make you smile.
+      Launching isn't the end of the process. It's when
+      the product finally starts giving you information.
     </p>
 
   </div>
@@ -551,79 +742,37 @@ content="About Studio Sünshine — a tiny independent app studio making small, 
 </div>
 
   </div></section><!-- =========================
-     THE HUMAN
-========================= --><section>  <div class="person"><div class="person-label">
-  Behind Studio Sünshine
-</div>
-
-
-<h2>
-  I'm Buyi. I make things
-  because I keep thinking,
-  “Wait… I can build that.”
+     REALITY
+========================= --><section>  <div class="reality"><h2>
+  Not every idea<br>
+  gets built.
 </h2>
 
 
 <p>
-  I'm an applied AI developer, builder and lifelong problem-solver
-  based in South Africa. I came back to technology after years
-  away from software and discovered that AI had changed the game.
-  What once required a whole technical team could suddenly be
-  explored by one curious person with a laptop, a phone and a lot
-  of questions.
-</p>
-
-
-<br>
-
-
-<p>
-  I'm still learning. That's part of the point.
-  Studio Sünshine is where I get to experiment in public,
-  build useful things, break things, fix things and see
-  what actually sticks.
-</p>
-
-  </div></section><!-- =========================
-     PHILOSOPHY
-========================= --><section>  <div class="philosophy"><h2>
-  AI made building<br>
-  easier.
-</h2>
-
-
-<p>
-  It didn't make choosing what to build any easier.
-  That's the interesting part.
-</p>
-
-
-<br>
-
-
-<p>
-  So I'm less interested in building the biggest thing
-  and more interested in finding the right little thing —
-  building it quickly, putting it in people's hands
-  and learning from what happens.
+  And that's a feature, not a failure.
+  Some ideas are better as experiments. Some need more validation.
+  Some turn out to be unnecessary. The point of the process is
+  to find that out before too much time and money disappear into
+  the build.
 </p>
 
   </div></section><!-- =========================
      CTA
 ========================= --><section class="cta">  <p>
-    Curious about the process?
+    Curious about the things that made it through the process?
   </p><a
-href="howIBuild.html"
+href="apps.html"
 class="button"
 
 «»
 
-How I Build →
+Explore the apps →
 
   </a></section></main><!-- =========================
      FOOTER
 ========================= --><footer>  <div>
-    Studio Sünshine © 2026
+    Built by Studio Sünshine © 2026
   </div>  <div class="footer-links"><a href="index.html">
   Home
 </a>
