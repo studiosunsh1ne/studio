@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Studio Sünshine ☀️ — Small Apps. Bright Ideas.</title>
 
   <meta
     name="description"
     content="Studio Sünshine makes small, useful and occasionally ridiculous digital products for real life."
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
 
   <style>
@@ -448,17 +460,54 @@
       padding: 28px 24px 45px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       color: var(--muted);
       font-size: .78rem;
     }
 
     .footer-links {
       display: flex;
+      align-items: center;
       gap: 22px;
     }
 
     .footer-links a:hover {
       color: var(--ink);
+    }
+
+
+    /* =========================
+       SOCIAL ICONS
+    ========================= */
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 4px;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      background: var(--yellow);
+      color: var(--ink);
+      border-radius: 50%;
+      font-size: .95rem;
+      transition:
+        transform .2s ease,
+        background .2s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px);
+      background: var(--yellow-soft);
+    }
+
+    .social-icon i {
+      line-height: 1;
     }
 
 
@@ -553,13 +602,19 @@
       footer {
         padding: 25px 20px 35px;
         flex-direction: column;
-        gap: 15px;
+        align-items: flex-start;
+        gap: 18px;
       }
 
       .footer-links {
         flex-wrap: wrap;
         gap: 14px 20px;
       }
+
+      .social-links {
+        margin-left: 0;
+      }
+
     }
 
 
@@ -630,13 +685,13 @@
     }
 
   </style>
+
 </head>
 
 <body>
 
-  <!-- =========================
-       NAV
-  ========================= -->
+
+  <!-- NAV -->
 
   <nav>
 
@@ -665,9 +720,8 @@
 
   <main>
 
-    <!-- =========================
-         HERO
-    ========================= -->
+
+    <!-- HERO -->
 
     <div class="hero">
 
@@ -699,9 +753,7 @@
     </div>
 
 
-    <!-- =========================
-         LATEST
-    ========================= -->
+    <!-- LATEST -->
 
     <section id="apps">
 
@@ -887,9 +939,7 @@
     </section>
 
 
-    <!-- =========================
-         THE STUDIO
-    ========================= -->
+    <!-- THE STUDIO -->
 
     <section>
 
@@ -929,9 +979,7 @@
     </section>
 
 
-    <!-- =========================
-         BUILD / AI
-    ========================= -->
+    <!-- BUILD / AI -->
 
     <section>
 
@@ -1019,9 +1067,7 @@
     </section>
 
 
-    <!-- =========================
-         CTA
-    ========================= -->
+    <!-- CTA -->
 
     <section class="cta">
 
@@ -1046,9 +1092,7 @@
   </main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+  <!-- FOOTER -->
 
   <footer>
 
@@ -1074,17 +1118,36 @@
         How I Build
       </a>
 
-      <a
-        href="https://github.com/studiosunsh1ne"
-        target="_blank"
-        rel="noopener"
-      >
-        GitHub
-      </a>
+      <!-- SOCIALS -->
+
+      <div class="social-links">
+
+        <a
+          href="YOUR-LINKEDIN-URL-HERE"
+          class="social-icon"
+          target="_blank"
+          rel="noopener"
+          aria-label="Studio Sünshine on LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a
+          href="YOUR-TIKTOK-URL-HERE"
+          class="social-icon"
+          target="_blank"
+          rel="noopener"
+          aria-label="Studio Sünshine on TikTok"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+      </div>
 
     </div>
 
   </footer>
+
 
 </body>
 </html>
