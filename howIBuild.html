@@ -364,89 +364,265 @@
 
 
     /* =========================
-       FOOTER
-    ========================= */
+   FOOTER
+========================= */
 
-    footer {
-      padding: 28px 24px 45px;
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: .78rem;
-    }
+footer {
+  width: 100%;
+  padding: 48px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--muted);
+  font-size: .78rem;
+}
 
-    .footer-links {
-      display: flex;
-      gap: 22px;
-    }
+.social-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 24px;
+}
 
-    .footer-links a:hover {
-      color: var(--ink);
-    }
+.social-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: grid;
+  place-items: center;
+  background: var(--yellow);
+  color: var(--ink);
+  border-radius: 50%;
+  font-size: .95rem;
+  text-decoration: none;
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  background: var(--yellow-soft);
+}
+
+.social-icon i {
+  line-height: 1;
+}
+
+.footer-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 0 auto 18px;
+  text-align: center;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: var(--ink);
+}
+
+footer p {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
 
 
-    /* =========================
-       MOBILE
-    ========================= */
+/* =========================
+   MOBILE
+========================= */
 
-    @media (max-width: 760px) {
+@media (max-width: 760px) {
 
-      nav {
-        padding: 22px 20px;
-      }
+  nav {
+    padding: 22px 20px;
+  }
 
-      .nav-links {
-        gap: 12px;
-        font-size: .8rem;
-      }
+  .nav-links {
+    gap: 12px;
+    font-size: .8rem;
+  }
 
-      .build-link {
-        padding: 7px 10px;
-      }
+  .build-link {
+    padding: 7px 10px;
+  }
 
-      main {
-        padding: 35px 20px 70px;
-      }
+  main {
+    padding: 35px 20px 70px;
+  }
 
-      .hero {
-        padding: 40px 0 70px;
-      }
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 0 70px;
+  }
 
-      section {
-        padding: 55px 0;
-      }
+  .eyebrow {
+    justify-content: center;
+    white-space: nowrap;
+    font-size: .68rem;
+    letter-spacing: .12em;
+  }
 
-      .section-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
+  .hero-logo {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto 25px;
+  }
 
-      .step {
-        grid-template-columns: 40px 1fr;
-        padding: 25px;
-        gap: 15px;
-      }
+  .hero-logo img {
+    width: 100%;
+    max-width: 650px;
+  }
 
-      .ai-block,
-      .reality {
-        padding: 45px 25px;
-        border-radius: 24px;
-      }
+  h1 {
+    width: 100%;
+    font-size: clamp(1.55rem, 8.5vw, 3rem);
+    line-height: 1;
+    letter-spacing: -.06em;
+    white-space: nowrap;
+    margin-bottom: 25px;
+  }
 
-      .principles {
-        grid-template-columns: 1fr;
-      }
+  .hero p {
+    width: 100%;
+    max-width: 650px;
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
 
-      footer {
-        padding: 25px 20px 35px;
-        flex-direction: column;
-        gap: 15px;
-      }
+  .apps {
+    grid-template-columns: 1fr;
+  }
 
-      .footer-links {
-        flex-wrap: wrap;
-        gap: 14px 20px;
-      }
+  .app {
+    min-height: 250px;
+  }
+
+  .studio {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .build-section {
+    grid-template-columns: 1fr;
+  }
+
+  .build-card {
+    min-height: 270px;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  footer {
+    width: 100%;
+    padding: 25px 20px 35px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .social-links {
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto 24px;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: center;
+    gap: 14px 20px;
+    margin: 0 auto 18px;
+  }
+
+  footer p {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  nav {
+    padding: 18px 16px;
+  }
+
+  .logo {
+    font-size: .9rem;
+  }
+
+  .nav-links {
+    gap: 8px;
+    font-size: .7rem;
+  }
+
+  .build-link {
+    padding: 6px 8px;
+  }
+
+  main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero {
+    padding-top: 28px;
+  }
+
+  .eyebrow {
+    font-size: .55rem;
+    letter-spacing: .08em;
+    gap: 6px;
+  }
+
+  .hero-logo {
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: clamp(1.35rem, 8.2vw, 1.9rem);
+    letter-spacing: -.065em;
+    white-space: nowrap;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .app {
+    padding: 22px;
+  }
+
+  .build-card {
+    padding: 28px;
+  }
+
+  .cta {
+    padding: 50px 25px;
+  }
+
 
     }
 
