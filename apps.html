@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Apps — Studio Sünshine ☀️</title><meta
+name="description"
+content="Small apps and digital products from Studio Sünshine."
 
-  <title>Apps — Studio Sünshine ☀️</title>
+«»
 
-  <meta
-    name="description"
-    content="Small apps and digital products from Studio Sünshine."
-  >
-
-  <style>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >  <style>
 
     :root {
       --yellow: #FFD84D;
@@ -388,20 +385,78 @@
     ========================= */
 
     footer {
-      padding: 28px 24px 45px;
+      width: 100%;
+      padding: 48px 24px 32px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       color: var(--muted);
       font-size: .78rem;
     }
 
-    .footer-links {
+    .social-links {
+      width: 100%;
       display: flex;
-      gap: 22px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 auto 24px;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      display: grid;
+      place-items: center;
+      background: var(--yellow);
+      color: var(--ink);
+      border-radius: 50%;
+      font-size: .95rem;
+      text-decoration: none;
+      transition:
+        transform .2s ease,
+        background .2s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px);
+      background: var(--yellow-soft);
+    }
+
+    .social-icon i {
+      line-height: 1;
+    }
+
+    .footer-links {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
     }
 
     .footer-links a:hover {
       color: var(--ink);
+    }
+
+    footer p {
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
     }
 
 
@@ -456,399 +511,428 @@
 
       footer {
         padding: 25px 20px 35px;
-        flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .social-links {
+        width: 100%;
+        justify-content: center;
+        margin: 0 auto 24px;
       }
 
       .footer-links {
-        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
         gap: 14px 20px;
+        margin: 0 auto 18px;
+      }
+
+      footer p {
+        width: 100%;
+        text-align: center;
       }
 
     }
 
-  </style>
-</head>
-
-<body>
-
-  <!-- =========================
+  </style></head><body>  <!-- =========================
        NAV
-  ========================= -->
+  ========================= -->  <nav><a href="index.html" class="logo">
+  Studio Sünshine ☀️
+</a>
 
-  <nav>
+<div class="nav-links">
 
-    <a href="index.html" class="logo">
-      Studio Sünshine ☀️
-    </a>
+  <a href="apps.html" class="active">
+    Apps
+  </a>
 
-    <div class="nav-links">
+  <a href="about.html">
+    About
+  </a>
 
-      <a href="apps.html" class="active">
-        Apps
-      </a>
+  <a href="howIBuild.html" class="build-link">
+    How I Build →
+  </a>
 
-      <a href="about.html">
-        About
-      </a>
+</div>
 
-      <a href="howIBuild.html" class="build-link">
-        How I Build →
-      </a>
+  </nav>  <main><!-- =========================
+     HERO
+========================= -->
 
-    </div>
+<div class="hero">
 
-  </nav>
+  <div class="eyebrow">
+    <span class="sun"></span>
+    The collection
+  </div>
 
+  <h1>
+    Small apps.<br>
+    Real problems.
+  </h1>
 
-  <main>
+  <p>
+    A growing collection of tiny digital products built to solve
+    specific problems, make everyday things a little easier
+    and occasionally make life a little more fun.
+  </p>
 
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <div class="hero">
-
-      <div class="eyebrow">
-        <span class="sun"></span>
-        The collection
-      </div>
-
-      <h1>
-        Small apps.<br>
-        Real problems.
-      </h1>
-
-      <p>
-        A growing collection of tiny digital products built to solve
-        specific problems, make everyday things a little easier
-        and occasionally make life a little more fun.
-      </p>
-
-    </div>
+</div>
 
 
-    <!-- =========================
-         LATEST
-    ========================= -->
+<!-- =========================
+     LATEST
+========================= -->
 
-    <section>
+<section>
 
-      <div class="section-heading">
+  <div class="section-heading">
 
-        <h2>
-          Latest from the studio
-        </h2>
+    <h2>
+      Latest from the studio
+    </h2>
 
-        <span>
-          4 products
+    <span>
+      4 products
+    </span>
+
+  </div>
+
+
+  <div class="apps-grid">
+
+
+    <!-- BUILD CHECK -->
+
+    <article class="app-card latest">
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          🧪
+        </div>
+
+        <span class="status">
+          Live
         </span>
 
       </div>
 
 
-      <div class="apps-grid">
+      <div class="app-content">
 
+        <h2>
+          BuildCheck
+        </h2>
 
-        <!-- BUILD CHECK -->
+        <p class="app-description">
+          Stress-test your app idea before you spend your time
+          and money building it.
+        </p>
 
-        <article class="app-card latest">
+        <div class="app-meta">
+          <span>AI</span>
+          <span>Ideas</span>
+          <span>Build</span>
+        </div>
 
-          <div class="app-top">
-
-            <div class="app-icon">
-              🧪
-            </div>
-
-            <span class="status">
-              Live
-            </span>
-
-          </div>
-
-
-          <div class="app-content">
-
-            <h2>
-              BuildCheck
-            </h2>
-
-            <p class="app-description">
-              Stress-test your app idea before you spend your time
-              and money building it.
-            </p>
-
-            <div class="app-meta">
-              <span>AI</span>
-              <span>Ideas</span>
-              <span>Build</span>
-            </div>
-
-            <a
-              href="#"
-              class="app-link"
-            >
-              Try BuildCheck →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- SOLO DATES -->
-
-        <article class="app-card">
-
-          <div class="app-top">
-
-            <div class="app-icon">
-              💌
-            </div>
-
-            <span class="status">
-              Live
-            </span>
-
-          </div>
-
-
-          <div class="app-content">
-
-            <h2>
-              Solo Dates
-            </h2>
-
-            <p class="app-description">
-              A cute little guide to finding places, activities
-              and things to do when you're taking yourself out.
-            </p>
-
-            <div class="app-meta">
-              <span>Lifestyle</span>
-              <span>Discovery</span>
-            </div>
-
-            <a
-              href="https://solodates.netlify.app"
-              class="app-link"
-              target="_blank"
-              rel="noopener"
-            >
-              Explore Solo Dates →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PIGGY BANK -->
-
-        <article class="app-card">
-
-          <div class="app-top">
-
-            <div class="app-icon">
-              🐷
-            </div>
-
-            <span class="status">
-              Live
-            </span>
-
-          </div>
-
-
-          <div class="app-content">
-
-            <h2>
-              Piggy Bank
-            </h2>
-
-            <p class="app-description">
-              A simple, cheerful savings tracker for turning
-              small contributions into bigger goals.
-            </p>
-
-            <div class="app-meta">
-              <span>Money</span>
-              <span>Savings</span>
-            </div>
-
-            <a
-              href="#"
-              class="app-link"
-            >
-              Open Piggy Bank →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- ISTOLO -->
-
-        <article class="app-card">
-
-          <div class="app-top">
-
-            <div class="app-icon">
-              🛒
-            </div>
-
-            <span class="status">
-              Live
-            </span>
-
-          </div>
-
-
-          <div class="app-content">
-
-            <h2>
-              iStolo
-            </h2>
-
-            <p class="app-description">
-              Simple offline stock and sales tracking for small shops,
-              designed to keep everyday retail admin manageable.
-            </p>
-
-            <div class="app-meta">
-              <span>Business</span>
-              <span>Retail</span>
-              <span>Offline</span>
-            </div>
-
-            <a
-              href="https://studiosunsh1ne.github.io/istolo/"
-              class="app-link"
-              target="_blank"
-              rel="noopener"
-            >
-              Open iStolo →
-            </a>
-
-          </div>
-
-        </article>
+        <a
+          href="#"
+          class="app-link"
+        >
+          Try BuildCheck →
+        </a>
 
       </div>
 
-    </section>
+    </article>
 
 
-    <!-- =========================
-         PHILOSOPHY
-    ========================= -->
+    <!-- SOLO DATES -->
 
-    <section>
+    <article class="app-card">
 
-      <div class="philosophy">
+      <div class="app-top">
 
-        <div class="label">
-          Why these apps?
+        <div class="app-icon">
+          💌
         </div>
 
-
-        <div class="philosophy-copy">
-
-          <p>
-            There isn't one category connecting everything in this collection.
-            That's intentional.
-          </p>
-
-
-          <p>
-            What connects them is the question behind them:
-            <strong>
-              Can a small piece of software make this particular
-              problem easier?
-            </strong>
-          </p>
-
-
-          <p>
-            Sometimes the answer is practical. Sometimes it's playful.
-            The goal isn't to build the biggest product possible.
-            It's to build something useful enough that someone actually
-            wants to use it.
-          </p>
-
-        </div>
+        <span class="status">
+          Live
+        </span>
 
       </div>
 
-    </section>
+
+      <div class="app-content">
+
+        <h2>
+          Solo Dates
+        </h2>
+
+        <p class="app-description">
+          A cute little guide to finding places, activities
+          and things to do when you're taking yourself out.
+        </p>
+
+        <div class="app-meta">
+          <span>Lifestyle</span>
+          <span>Discovery</span>
+        </div>
+
+        <a
+          href="https://solodates.netlify.app"
+          class="app-link"
+          target="_blank"
+          rel="noopener"
+        >
+          Explore Solo Dates →
+        </a>
+
+      </div>
+
+    </article>
 
 
-    <!-- =========================
-         CTA
-    ========================= -->
+    <!-- PIGGY BANK -->
 
-    <section class="cta">
+    <article class="app-card">
 
-      <h2>
-        Have an idea?
-      </h2>
+      <div class="app-top">
+
+        <div class="app-icon">
+          🐷
+        </div>
+
+        <span class="status">
+          Live
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          Piggy Bank
+        </h2>
+
+        <p class="app-description">
+          A simple, cheerful savings tracker for turning
+          small contributions into bigger goals.
+        </p>
+
+        <div class="app-meta">
+          <span>Money</span>
+          <span>Savings</span>
+        </div>
+
+        <a
+          href="#"
+          class="app-link"
+        >
+          Open Piggy Bank →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- ISTOLO -->
+
+    <article class="app-card">
+
+      <div class="app-top">
+
+        <div class="app-icon">
+          🛒
+        </div>
+
+        <span class="status">
+          Live
+        </span>
+
+      </div>
+
+
+      <div class="app-content">
+
+        <h2>
+          iStolo
+        </h2>
+
+        <p class="app-description">
+          Simple offline stock and sales tracking for small shops,
+          designed to keep everyday retail admin manageable.
+        </p>
+
+        <div class="app-meta">
+          <span>Business</span>
+          <span>Retail</span>
+          <span>Offline</span>
+        </div>
+
+        <a
+          href="https://studiosunsh1ne.github.io/istolo/"
+          class="app-link"
+          target="_blank"
+          rel="noopener"
+        >
+          Open iStolo →
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PHILOSOPHY
+========================= -->
+
+<section>
+
+  <div class="philosophy">
+
+    <div class="label">
+      Why these apps?
+    </div>
+
+
+    <div class="philosophy-copy">
 
       <p>
-        Before you build it, maybe stress-test it.
+        There isn't one category connecting everything in this collection.
+        That's intentional.
       </p>
 
-      <a
-        href="howIBuild.html"
-        class="button"
-      >
-        See How I Build →
-      </a>
 
-    </section>
-
-  </main>
+      <p>
+        What connects them is the question behind them:
+        <strong>
+          Can a small piece of software make this particular
+          problem easier?
+        </strong>
+      </p>
 
 
-  <!-- =========================
+      <p>
+        Sometimes the answer is practical. Sometimes it's playful.
+        The goal isn't to build the biggest product possible.
+        It's to build something useful enough that someone actually
+        wants to use it.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+  <h2>
+    Have an idea?
+  </h2>
+
+  <p>
+    Before you build it, maybe stress-test it.
+  </p>
+
+  <a
+    href="howIBuild.html"
+    class="button"
+  >
+    See How I Build →
+  </a>
+
+</section>
+
+  </main>  <!-- =========================
        FOOTER
-  ========================= -->
+  ========================= -->  <footer><div class="social-links">
 
-  <footer>
+  <a
+    href="https://www.linkedin.com/in/buyi-mncube-2340021ba?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    class="social-icon"
+    aria-label="LinkedIn"
+    target="_blank"
+    rel="noopener"
+  >
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
 
-    <div>
-      Studio Sünshine © 2026
-    </div>
+  <a
+    href="https://www.tiktok.com/@the.b.cod3?_r=1&_d=eg1kdgl1jf0e5k&sec_uid=MS4wLjABAAAAxTNWBh6ijfnibMAgLFksxMhYQmYWes2HtA1Z185aQXoccrcdTWDKUL9qQOr8JjH1&share_author_id=6850684333814170629&sharer_language=en&source=h5_m&u_code=dddmd28e10b687&timestamp=1789803500&user_id=6850684333814170629&sec_user_id=MS4wLjABAAAAxTNWBh6ijfnibMAgLFksxMhYQmYWes2HtA1Z185aQXoccrcdTWDKUL9qQOr8JjH1&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7685340044499994389&share_link_id=ce5e1a09-10ab-43eb-b616-5d476823ae4d&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"
+    class="social-icon"
+    aria-label="TikTok"
+    target="_blank"
+    rel="noopener"
+  >
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
 
-    <div class="footer-links">
+  <a
+    href="https://www.instagram.com/the.b.cod3?igsi=MWZ0a2h2amNyemZvMA=="
+    class="social-icon"
+    aria-label="Instagram"
+    target="_blank"
+    rel="noopener"
+  >
+    <i class="fa-brands fa-instagram"></i>
+  </a>
 
-      <a href="index.html">
-        Home
-      </a>
+  <a
+    href="https://whatsapp.com/channel/0029Vb5jDfqB4hdUr7W2Nt1H"
+    class="social-icon"
+    aria-label="WhatsApp Channel"
+    target="_blank"
+    rel="noopener"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-      <a href="apps.html">
-        Apps
-      </a>
+</div>
 
-      <a href="about.html">
-        About
-      </a>
 
-      <a href="howIBuild.html">
-        How I Build
-      </a>
+<div class="footer-links">
 
-      <a
-        href="https://github.com/studiosunsh1ne"
-        target="_blank"
-        rel="noopener"
-      >
-        GitHub
-      </a>
+  <a href="index.html">
+    Home
+  </a>
 
-    </div>
+  <a href="apps.html">
+    Apps
+  </a>
 
-  </footer>
+  <a href="about.html">
+    About
+  </a>
 
-</body>
+  <a href="howIBuild.html">
+    How I Build
+  </a>
+
+</div>
+
+
+<p>
+  Built by Studio Sünshine © 2026
+</p>
+
+  </footer></body>
 </html>
