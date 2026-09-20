@@ -61,8 +61,7 @@
     }
 
     nav,
-    main,
-    footer {
+    main {
       max-width: 1120px;
       margin: auto;
     }
@@ -457,104 +456,104 @@
     /* =========================
        FOOTER
     ========================= */
-footer {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 48px 20px 32px;
-  text-align: center;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+    footer {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 48px 20px 32px;
+      text-align: center;
 
-.social-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 0 auto 24px;
-}
-
-.social-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--yellow);
-  color: var(--ink);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.social-icon:hover {
-  background: var(--yellow-soft);
-  transform: translateY(-3px);
-}
-
-.footer-links {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin: 0 auto 18px;
-  text-align: center;
-}
-
-.footer-links a {
-  color: var(--ink);
-  text-decoration: none;
-  font-size: 14px;
-}
-
-footer p {
-  width: 100%;
-  margin: 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-
-    /* =========================
-       SOCIAL ICONS
-    ========================= */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
     .social-links {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-left: 4px;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 auto 24px;
     }
 
     .social-icon {
       width: 36px;
       height: 36px;
-      display: grid;
-      place-items: center;
+      border-radius: 50%;
       background: var(--yellow);
       color: var(--ink);
-      border-radius: 50%;
-      font-size: .95rem;
-      transition:
-        transform .2s ease,
-        background .2s ease;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      transition: 0.2s ease;
     }
 
     .social-icon:hover {
-      transform: translateY(-3px);
       background: var(--yellow-soft);
+      transform: translateY(-3px);
     }
 
     .social-icon i {
       line-height: 1;
+    }
+
+    .footer-links {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .footer-links a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #8a6900;
+    }
+
+    .legal-links {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin: 0 auto 12px;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    .legal-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .legal-links a:hover {
+      color: var(--ink);
+    }
+
+    .legal-links span {
+      color: var(--muted);
+      margin: 0 2px;
+    }
+
+    footer p {
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
     }
 
 
@@ -648,8 +647,7 @@ footer p {
 
       footer {
         padding: 25px 20px 35px;
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 18px;
       }
 
@@ -659,13 +657,21 @@ footer p {
       }
 
       .social-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      margin: 0 auto 24px;
-     }
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin: 0 auto 24px;
+      }
+
+      .legal-links {
+        margin-top: -4px;
+        margin-bottom: 0;
+        font-size: 11px;
+        gap: 3px;
+      }
+
+    }
 
 
     /* =========================
@@ -732,23 +738,9 @@ footer p {
         padding: 50px 25px;
       }
 
-.legal-links {
-  margin-top: 8px;
-  font-size: 0.75rem;
-}
-
-.legal-links a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.legal-links a:hover {
-  color: #f7c542;
-}
-
-.legal-links span {
-  margin: 0 4px;
-}
+      .legal-links {
+        font-size: 10px;
+      }
 
     }
 
@@ -1162,69 +1154,83 @@ footer p {
 
   <!-- FOOTER -->
 
-   <footer>
-  <div class="social-links">
+  <footer>
 
-  <a
-    href="https://www.linkedin.com/in/buyi-mncube-2340021ba?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-    class="social-icon"
-    aria-label="LinkedIn"
-    target="_blank"
-    rel="noopener"
-  >
-    <i class="fa-brands fa-linkedin-in"></i>
-  </a>
+    <div class="social-links">
 
-  <a
-    href="https://www.tiktok.com/@the.b.cod3?_r=1&_d=eg1kdgl1jf0e5k&sec_uid=MS4wLjABAAAAxTNWBh6ijfnibMAgLFksxMhYQmYWes2HtA1Z185aQXoccrcdTWDKUL9qQOr8JjH1&share_author_id=6850684333814170629&sharer_language=en&source=h5_m&u_code=dddmd28e10b687&timestamp=1789803500&user_id=6850684333814170629&sec_user_id=MS4wLjABAAAAxTNWBh6ijfnibMAgLFksxMhYQmYWes2HtA1Z185aQXoccrcdTWDKUL9qQOr8JjH1&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7685340044499994389&share_link_id=ce5e1a09-10ab-43eb-b616-5d476823ae4d&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"
-    class="social-icon"
-    aria-label="TikTok"
-    target="_blank"
-    rel="noopener"
-  >
-    <i class="fa-brands fa-tiktok"></i>
-  </a>
+      <a
+        href="https://www.linkedin.com/in/buyi-mncube-2340021ba?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+        class="social-icon"
+        aria-label="LinkedIn"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
 
-  <a
-    href="https://www.instagram.com/the.b.cod3?igsi=MWZ0a2h2amNyemZvMA=="
-    class="social-icon"
-    aria-label="Instagram"
-    target="_blank"
-    rel="noopener"
-  >
-    <i class="fa-brands fa-instagram"></i>
-  </a>
+      <a
+        href="https://www.tiktok.com/@the.b.cod3?_r=1&_d=eg1kdgl1jf0e5k&sec_uid=MS4wLjABAAAAxTNWBh6ijfnibMAgLFksxMhYQmYWes2HtA1Z185aQXoccrcdTWDKUL9qQOr8JjH1&share_author_id=6850684333814170629&sharer_language=en&source=h5_m&u_code=dddmd28e10b687&timestamp=1789803500&user_id=6850684333814170629&sec_user_id=MS4wLjABAAAAxTNWBh6ijfnibMAgLFksxMhYQmYWes2HtA1Z185aQXoccrcdTWDKUL9qQOr8JjH1&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7685340044499994389&share_link_id=ce5e1a09-10ab-43eb-b616-5d476823ae4d&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"
+        class="social-icon"
+        aria-label="TikTok"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
 
-  <a
-    href="https://whatsapp.com/channel/0029Vb5jDfqB4hdUr7W2Nt1H"
-    class="social-icon"
-    aria-label="WhatsApp Channel"
-    target="_blank"
-    rel="noopener"
-  >
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+      <a
+        href="https://www.instagram.com/the.b.cod3?igsi=MWZ0a2h2amNyemZvMA=="
+        class="social-icon"
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-instagram"></i>
+      </a>
 
-</div>
-<div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="apps.html">Apps</a>
-    <a href="about.html">About</a>
-    <a href="howIBuild.html">How I Build</a>
-  </div>
+      <a
+        href="https://whatsapp.com/channel/0029Vb5jDfqB4hdUr7W2Nt1H"
+        class="social-icon"
+        aria-label="WhatsApp Channel"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
 
-<div class="legal-links">
-  <a href="privacy.html">Privacy</a>
-  <span>·</span>
-  <a href="terms.html">Terms</a>
-  <span>·</span>
-  <a href="disclaimer.html">Disclaimer</a>
-</div>
-
-  <p>Built by Studio Sünshine © 2026</p>
-</footer>
+    </div>
 
 
+    <div class="footer-links">
+
+      <a href="index.html">Home</a>
+      <a href="apps.html">Apps</a>
+      <a href="about.html">About</a>
+      <a href="howIBuild.html">How I Build</a>
+
+    </div>
+
+
+    <div class="legal-links">
+
+      <a href="privacy.html">Privacy</a>
+
+      <span>·</span>
+
+      <a href="terms.html">Terms</a>
+
+      <span>·</span>
+
+      <a href="disclaimer.html">Disclaimer</a>
+
+    </div>
+
+
+    <p>
+      Built by Studio Sünshine © 2026
+    </p>
+
+  </footer>
 
 
 </body>
