@@ -17,6 +17,11 @@
     content="About Studio Sünshine — a tiny independent app studio making small, useful digital products from South Africa."
   >
 
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
   <style>
 
     :root {
@@ -331,20 +336,78 @@
     ========================= */
 
     footer {
-      padding: 28px 24px 45px;
+      width: 100%;
+      padding: 48px 24px 32px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       color: var(--muted);
       font-size: .78rem;
     }
 
-    .footer-links {
+    .social-links {
+      width: 100%;
       display: flex;
-      gap: 22px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 auto 24px;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      display: grid;
+      place-items: center;
+      background: var(--yellow);
+      color: var(--ink);
+      border-radius: 50%;
+      font-size: .95rem;
+      text-decoration: none;
+      transition:
+        transform .2s ease,
+        background .2s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px);
+      background: var(--yellow-soft);
+    }
+
+    .social-icon i {
+      line-height: 1;
+    }
+
+    .footer-links {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
     }
 
     .footer-links a:hover {
       color: var(--ink);
+    }
+
+    footer p {
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
     }
 
 
@@ -399,14 +462,29 @@
       }
 
       footer {
+        width: 100%;
         padding: 25px 20px 35px;
-        flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .social-links {
+        width: 100%;
+        justify-content: center;
+        margin: 0 auto 24px;
       }
 
       .footer-links {
-        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
         gap: 14px 20px;
+        margin: 0 auto 18px;
+      }
+
+      footer p {
+        width: 100%;
+        text-align: center;
       }
 
     }
@@ -419,9 +497,7 @@
 <body>
 
 
-  <!-- =========================
-       NAV
-  ========================= -->
+  <!-- NAV -->
 
   <nav>
 
@@ -451,9 +527,7 @@
   <main>
 
 
-    <!-- =========================
-         HERO
-    ========================= -->
+    <!-- HERO -->
 
     <div class="hero">
 
@@ -475,9 +549,7 @@
     </div>
 
 
-    <!-- =========================
-         STORY
-    ========================= -->
+    <!-- STORY -->
 
     <section>
 
@@ -487,14 +559,12 @@
           The story
         </div>
 
-
         <div class="story">
 
           <p>
             Studio Sünshine started with a simple obsession:
             <strong>making things easier with technology.</strong>
           </p>
-
 
           <p>
             Not necessarily huge things. Sometimes it's a business
@@ -505,13 +575,11 @@
             is actually worth building.
           </p>
 
-
           <p>
             Those little problems are interesting to me.
             They're where technology stops being impressive
             and starts being useful.
           </p>
-
 
           <p>
             So I started building.
@@ -524,9 +592,7 @@
     </section>
 
 
-    <!-- =========================
-         WHY SMALL
-    ========================= -->
+    <!-- WHY SMALL -->
 
     <section>
 
@@ -536,9 +602,7 @@
           Why small?
         </div>
 
-
         <div class="why">
-
 
           <div class="why-card">
 
@@ -611,7 +675,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -619,9 +682,7 @@
     </section>
 
 
-    <!-- =========================
-         THE HUMAN
-    ========================= -->
+    <!-- THE HUMAN -->
 
     <section>
 
@@ -631,13 +692,11 @@
           Behind Studio Sünshine
         </div>
 
-
         <h2>
           I'm Buyi. I make things
           because I keep thinking,
           “Wait… I can build that.”
         </h2>
-
 
         <p>
           I'm an applied AI developer, builder and lifelong problem-solver
@@ -648,9 +707,7 @@
           of questions.
         </p>
 
-
         <br>
-
 
         <p>
           I'm still learning. That's part of the point.
@@ -664,9 +721,7 @@
     </section>
 
 
-    <!-- =========================
-         PHILOSOPHY
-    ========================= -->
+    <!-- PHILOSOPHY -->
 
     <section>
 
@@ -677,15 +732,12 @@
           easier.
         </h2>
 
-
         <p>
           It didn't make choosing what to build any easier.
           That's the interesting part.
         </p>
 
-
         <br>
-
 
         <p>
           So I'm less interested in building the biggest thing
@@ -699,9 +751,7 @@
     </section>
 
 
-    <!-- =========================
-         CTA
-    ========================= -->
+    <!-- CTA -->
 
     <section class="cta">
 
@@ -722,14 +772,52 @@
   </main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+  <!-- FOOTER -->
 
   <footer>
 
-    <div>
-      Studio Sünshine © 2026
+    <div class="social-links">
+
+      <a
+        href="https://www.linkedin.com/in/buyi-mncube-2340021ba?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+        class="social-icon"
+        aria-label="LinkedIn"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+
+      <a
+        href="https://www.tiktok.com/@the.b.cod3?_r=1&_d=eg1kdgl1jf0e5k&sec_uid=MS4wLjABAAAAxTNWBh6ijfnibMAgLFksxMhYQmYWes2HtA1Z185aQXoccrcdTWDKUL9qQOr8JjH1&share_author_id=6850684333814170629&sharer_language=en&source=h5_m&u_code=dddmd28e10b687&timestamp=1789803500&user_id=6850684333814170629&sec_user_id=MS4wLjABAAAAxTNWBh6ijfnibMAgLFksxMhYQmYWes2HtA1Z185aQXoccrcdTWDKUL9qQOr8JjH1&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7685340044499994389&share_link_id=ce5e1a09-10ab-43eb-b616-5d476823ae4d&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"
+        class="social-icon"
+        aria-label="TikTok"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+      <a
+        href="https://www.instagram.com/the.b.cod3?igsi=MWZ0a2h2amNyemZvMA=="
+        class="social-icon"
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a
+        href="https://whatsapp.com/channel/0029Vb5jDfqB4hdUr7W2Nt1H"
+        class="social-icon"
+        aria-label="WhatsApp Channel"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+
     </div>
 
     <div class="footer-links">
@@ -750,18 +838,15 @@
         How I Build
       </a>
 
-      <a
-        href="https://github.com/studiosunsh1ne"
-        target="_blank"
-        rel="noopener"
-      >
-        GitHub
-      </a>
-
     </div>
+
+    <p>
+      Built by Studio Sünshine © 2026
+    </p>
 
   </footer>
 
 
 </body>
+
 </html>
